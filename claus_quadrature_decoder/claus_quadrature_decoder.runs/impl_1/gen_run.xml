@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585259227">
+  <File Type="BITSTR-BMM" Name="quadratur_decoder_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="quadratur_decoder_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="quadratur_decoder_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="quadratur_decoder_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="quadratur_decoder.tcl"/>
+  <File Type="OPT-TIMING" Name="quadratur_decoder_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="quadratur_decoder_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="quadratur_decoder_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="quadratur_decoder_reports.tcl"/>
+  <File Type="OPT-DRC" Name="quadratur_decoder_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="quadratur_decoder.hwdef"/>
+  <File Type="PWROPT-DCP" Name="quadratur_decoder_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="quadratur_decoder_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="quadratur_decoder_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="quadratur_decoder_placed.dcp"/>
+  <File Type="PLACE-IO" Name="quadratur_decoder_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="quadratur_decoder_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="quadratur_decoder_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="quadratur_decoder_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="quadratur_decoder_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="quadratur_decoder_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="quadratur_decoder_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="quadratur_decoder_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="quadratur_decoder_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="quadratur_decoder.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="quadratur_decoder_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="quadratur_decoder_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="quadratur_decoder_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="quadratur_decoder.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="quadratur_decoder_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="quadratur_decoder_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="quadratur_decoder_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="quadratur_decoder_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="quadratur_decoder_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="quadratur_decoder_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="quadratur_decoder_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="quadratur_decoder.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="quadratur_decoder_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="quadratur_decoder_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="quadratur_decoder_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="quadratur_decoder_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="quadratur_decoder_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="quadratur_decoder_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="quadratur_decoder_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="quadratur_decoder_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="quadratur_decoder_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="quadratur_decoder_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="quadratur_decoder_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="quadratur_decoder_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="quadratur_decoder_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="quadratur_decoder_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="quadratur_decoder_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="quadratur_decoder_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="quadratur_decoder_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="quadratur_decoder_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="quadratur_decoder_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="quadratur_decoder_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="quadratur_decoder_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="quadratur_decoder.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="quadratur_decoder_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="quadratur_decoder.rbt"/>
+  <File Type="BITSTR-NKY" Name="quadratur_decoder.nky"/>
+  <File Type="PDI-FILE" Name="quadratur_decoder.pdi"/>
+  <File Type="RCFI_FILE" Name="quadratur_decoder.rcfi"/>
+  <File Type="CFI_FILE" Name="quadratur_decoder.cfi"/>
+  <File Type="RNPI_FILE" Name="quadratur_decoder.rnpi"/>
+  <File Type="NPI_FILE" Name="quadratur_decoder.npi"/>
+  <File Type="RBD_FILE" Name="quadratur_decoder.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="quadratur_decoder.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="quadratur_decoder.sysdef"/>
+  <File Type="BG-BGN" Name="quadratur_decoder.bgn"/>
+  <File Type="BG-DRC" Name="quadratur_decoder.drc"/>
+  <File Type="RDI-RDI" Name="quadratur_decoder.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/quadratur_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="quadratur_decoder"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/basys3_master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
