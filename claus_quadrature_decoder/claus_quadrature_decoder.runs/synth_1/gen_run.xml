@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585315907">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585319655">
   <File Type="PA-TCL" Name="quadratur_decoder.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="quadratur_decoder_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="quadratur_decoder_reports.tcl"/>

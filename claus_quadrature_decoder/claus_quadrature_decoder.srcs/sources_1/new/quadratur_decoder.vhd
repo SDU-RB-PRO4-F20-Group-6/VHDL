@@ -36,10 +36,10 @@ use ieee.numeric_std.ALL;
 
 entity quadratur_decoder is
     Port (
-    clk :   in  std_logic;
-    JB  :   in  std_logic_vector (1 downto 0);
-    btnC:   in std_logic;
-    led :   out std_logic_vector (15 downto 0));
+    clk :   in  std_logic;                          --clock signal
+    JB  :   in  std_logic_vector (1 downto 0);      --encoder input
+    btnC:   in std_logic;                           --reset button
+    led :   out std_logic_vector (15 downto 0));    --visual count reader
 end quadratur_decoder;
 
 architecture Behavioral of quadratur_decoder is
@@ -53,30 +53,34 @@ begin
         if rising_edge(clk) then
             delay := delay + 1;
             if (delay > 999999) then delay := 999999; end if;
-            if ((JB /= preposition) and delay > 325000) then -- 325000 is delay to compensate for rebounce
-              case((preposition & JB)) is
-                  when "0111" =>
-                      position <= position + 1;
-                  when "1110" =>
-                      position <= position + 1;
-                  when "1000" =>
-                      position <= position + 1;
-                  when "0001" =>
-                      position <= position + 1;
-                  when "0100" =>
-                      position <= position - 1;
-                  when "0010" =>
-                      position <= position - 1;
-                  when "1011" =>
-                      position <= position - 1;
-                  when "1101" =>
-                      position <= position - 1;
-                  when others =>
-                      position <= position;
-               end case;
-               delay  := 0;
+            if ((JB /= preposition)) then 
+                if (delay > 325000) then -- 325000 is delay to compensate for rebounce
+                  case((preposition & JB)) is
+                      when "0111" =>
+                          position <= position + 1;
+                      when "1110" =>
+                          position <= position + 1;
+                      when "1000" =>
+                          position <= position + 1;
+                      when "0001" =>
+                          position <= position + 1;
+                      when "0100" =>
+                          position <= position - 1;
+                      when "0010" =>
+                          position <= position - 1;
+                      when "1011" =>
+                          position <= position - 1;
+                      when "1101" =>
+                          position <= position - 1;
+                      when others =>
+                          position <= position;
+                   end case;
+                   
+                   preposition <= JB;
+                end if;
+            else 
+                delay  := 0;
             end if;
-            preposition <= JB;
             led <= std_logic_vector(position);
               
             if(btnC = '1') then
