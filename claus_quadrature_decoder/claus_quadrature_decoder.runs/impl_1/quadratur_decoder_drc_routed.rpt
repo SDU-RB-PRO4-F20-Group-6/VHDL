@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Mar 26 22:49:27 2020
+| Date         : Fri Mar 27 14:34:15 2020
 | Host         : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 | Command      : report_drc -file quadratur_decoder_drc_routed.rpt -pb quadratur_decoder_drc_routed.pb -rpx quadratur_decoder_drc_routed.rpx
 | Design       : quadratur_decoder

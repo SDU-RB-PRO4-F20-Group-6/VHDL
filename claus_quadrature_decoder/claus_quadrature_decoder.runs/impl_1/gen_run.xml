@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585259227">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1585315907">
   <File Type="BITSTR-BMM" Name="quadratur_decoder_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="quadratur_decoder_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="quadratur_decoder_timing_summary_init.rpt"/>
