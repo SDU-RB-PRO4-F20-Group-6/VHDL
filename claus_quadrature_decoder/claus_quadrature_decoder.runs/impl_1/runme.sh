@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
-EAStep vivado -log quadratur_decoder.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source quadratur_decoder.tcl -notrace
+/bin/touch .init_design.begin.rst
+EAStep vivado -log component_mapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source component_mapper.tcl -notrace
 
 

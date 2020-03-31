@@ -36,26 +36,26 @@ use ieee.numeric_std.ALL;
 
 entity quadratur_decoder is
     Port (
-    clk :   in  std_logic;                          --clock signal
-    JB  :   in  std_logic_vector (1 downto 0);      --encoder input
-    btnC:   in std_logic;                           --reset button
-    led :   out std_logic_vector (15 downto 0));    --visual count reader
+    clk_in :   in  std_logic;                          --clock signal
+    encoder:in  std_logic_vector (1 downto 0);      --encoder input
+    reset:  in std_logic;                           --reset button
+    value:  out std_logic_vector (5 downto 0));    --visual count reader
 end quadratur_decoder;
 
 architecture Behavioral of quadratur_decoder is
 signal preposition : std_logic_vector(1 downto 0);
-signal position    : unsigned(15 downto 0) := (others => '0');
+signal position    : unsigned(5 downto 0) := (others => '0');
 begin
     
-    process (clk)
+    process (clk_in)
     variable delay: integer range 0 to 1000000;
     begin
-        if rising_edge(clk) then
+        if rising_edge(clk_in) then
             delay := delay + 1;
             if (delay > 999999) then delay := 999999; end if;
-            if ((JB /= preposition)) then 
+            if ((encoder /= preposition)) then 
                 if (delay > 325000) then -- 325000 is delay to compensate for rebounce
-                  case((preposition & JB)) is
+                  case((preposition & encoder)) is
                       when "0111" =>
                           position <= position + 1;
                       when "1110" =>
@@ -76,14 +76,14 @@ begin
                           position <= position;
                    end case;
                    
-                   preposition <= JB;
+                   preposition <= encoder;
                 end if;
             else 
                 delay  := 0;
             end if;
-            led <= std_logic_vector(position);
+            value <= std_logic_vector(position);
               
-            if(btnC = '1') then
+            if(reset = '1') then
               position <= (others => '0');
             end if; 
         end if;

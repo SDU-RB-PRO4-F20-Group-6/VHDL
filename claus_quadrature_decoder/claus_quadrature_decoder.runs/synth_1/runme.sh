@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log quadratur_decoder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source quadratur_decoder.tcl
+EAStep vivado -log component_mapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source component_mapper.tcl
