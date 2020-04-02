@@ -34,7 +34,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity component_mapper is
   Port ( 
     clk:    in std_logic;
-    JB:     in std_logic_vector(1 downto 0);
+    
+  -----------spi------------
+    sclk:   in std_logic;--- JA[3]
+    ss:     in std_logic;--- JA[2]
+    miso:   out std_logic;-- JA[1]
+    mosi:   in std_logic;--- JA[0]
+  --------------------------
+    
     btnC:   in std_logic;
     led:    out std_logic_vector(15 downto 0) := (others => '0'));
 end component_mapper;
@@ -42,14 +49,13 @@ end component_mapper;
 architecture Behavioral of component_mapper is
 --deffine busses and signals
 signal pwm_trigger_bus:   std_logic_vector(15 downto 0);
-
 --define components used
 component quadratur_decoder
     Port (
         clk_in :   in  std_logic;                       --clock signal
         encoder:in  std_logic_vector (1 downto 0);      --encoder input
         reset:  in std_logic;                           --reset button
-        value:  out std_logic_vector (15 downto 0));     --count reader
+        value:  out std_logic_vector (15 downto 0));    --count reader
 end component;
 
 component pwm_control
@@ -59,19 +65,48 @@ component pwm_control
         pwm_signal: out std_logic); --output
 end component;
 
-begin --begin Behavioral
-motor_feedback: quadratur_decoder
-    port map(
-        clk_in      => clk,
-        encoder     => JB,
-        reset       => btnC,
-        value       => pwm_trigger_bus
-    );
+component spi
+    Port (    
+    spi_clk_in: in std_logic;
+    
+    spi_sclk: in std_logic;
+    spi_mosi: in std_logic;
+    spi_ss  : in std_logic;
+    spi_miso: out std_logic;
+    
+    spi_data_in: out std_logic_vector(15 downto 0);
+    spi_data_out: in std_logic_vector(15 downto 0) := (others => '0'));
+end component;
 
-motor_input: pwm_control
+
+begin --begin Behavioral
+--motor_feedback: quadratur_decoder
+--    port map(
+--        clk_in      => clk,
+--        encoder     => JA,
+--        reset       => btnC,
+--        value       => pwm_trigger_bus
+--    );
+
+--motor_input: pwm_control
+--    port map(
+--        clk_in      => clk,
+--        pwm_trigger => pwm_trigger_bus,
+--        pwm_signal  => led(1)
+--    );
+
+communication: spi
     port map(
-        clk_in      => clk,
-        pwm_trigger => pwm_trigger_bus,
-        pwm_signal  => led(0)
+    spi_clk_in => clk,  -- clock
+
+    --------spi---------
+    spi_sclk=> sclk,----
+    spi_mosi=> mosi,----
+    spi_miso=> miso,----
+    spi_ss  => ss,------
+    --------------------
+    
+    spi_data_in =>led,  -- data from tiva to artix
+    spi_data_out =>open -- data from artix to tiva
     );
 end Behavioral;

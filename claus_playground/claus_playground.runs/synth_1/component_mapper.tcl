@@ -31,8 +31,7 @@ set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  C:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.srcs/sources_1/new/pwm_control.vhd
-  C:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.srcs/sources_1/new/quadratur_decoder.vhd
+  C:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.srcs/sources_1/new/SPI.vhd
   C:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.srcs/sources_1/new/component_mapper.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
