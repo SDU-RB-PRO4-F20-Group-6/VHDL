@@ -1,0 +1,678 @@
+
+*** Running vivado
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 337.684 ; gain = 32.188
+Command: synth_design -top design_1_wrapper -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14692 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 845.707 ; gain = 233.984
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:30]
+INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:34]
+INFO: [Synth 8-3491] module 'design_1_xlslice_4_8' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_8/synth/design_1_xlslice_4_8.v:57' bound to instance 'JB0' of component 'design_1_xlslice_4_8' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:229]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_4_8' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_8/synth/design_1_xlslice_4_8.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 8 - type: integer 
+	Parameter DIN_FROM bound to: 0 - type: integer 
+	Parameter DIN_TO bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (1#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_4_8' (2#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_8/synth/design_1_xlslice_4_8.v:57]
+INFO: [Synth 8-3491] module 'design_1_xlslice_5_0' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/synth/design_1_xlslice_5_0.v:57' bound to instance 'JB1' of component 'design_1_xlslice_5_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:234]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_5_0' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/synth/design_1_xlslice_5_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 8 - type: integer 
+	Parameter DIN_FROM bound to: 1 - type: integer 
+	Parameter DIN_TO bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (2#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_5_0' (3#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/synth/design_1_xlslice_5_0.v:57]
+INFO: [Synth 8-3491] module 'design_1_xlslice_5_1' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_1/synth/design_1_xlslice_5_1.v:57' bound to instance 'JC0' of component 'design_1_xlslice_5_1' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:239]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_5_1' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_1/synth/design_1_xlslice_5_1.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_5_1' (4#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_1/synth/design_1_xlslice_5_1.v:57]
+INFO: [Synth 8-3491] module 'design_1_xlslice_5_2' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_2/synth/design_1_xlslice_5_2.v:57' bound to instance 'JC1' of component 'design_1_xlslice_5_2' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:244]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_5_2' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_2/synth/design_1_xlslice_5_2.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_5_2' (5#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_2/synth/design_1_xlslice_5_2.v:57]
+INFO: [Synth 8-3491] module 'design_1_SPI_0_0' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_SPI_0_0_stub.vhdl:5' bound to instance 'SPI_0' of component 'design_1_SPI_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:249]
+INFO: [Synth 8-638] synthesizing module 'design_1_SPI_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_SPI_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_0' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58' bound to instance 'basys3_led' of component 'design_1_xlconcat_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:260]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 16 - type: integer 
+	Parameter NUM_PORTS bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (6#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_0' (7#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58]
+INFO: [Synth 8-3491] module 'design_1_delay_0_0' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_delay_0_0_stub.vhdl:5' bound to instance 'delay_0' of component 'design_1_delay_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:280]
+INFO: [Synth 8-638] synthesizing module 'design_1_delay_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_delay_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_pwm_control_0_0' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_pwm_control_0_0_stub.vhdl:5' bound to instance 'pwm_control_0' of component 'design_1_pwm_control_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:286]
+INFO: [Synth 8-638] synthesizing module 'design_1_pwm_control_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_pwm_control_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_pwm_control_0_1' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_pwm_control_0_1_stub.vhdl:5' bound to instance 'pwm_control_1' of component 'design_1_pwm_control_0_1' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:293]
+INFO: [Synth 8-638] synthesizing module 'design_1_pwm_control_0_1' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_pwm_control_0_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_quadratur_decoder_0_4' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_quadratur_decoder_0_4_stub.vhdl:5' bound to instance 'quadratur_decoder_0' of component 'design_1_quadratur_decoder_0_4' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:300]
+INFO: [Synth 8-638] synthesizing module 'design_1_quadratur_decoder_0_4' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_quadratur_decoder_0_4_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_quadratur_decoder_0_5' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_quadratur_decoder_0_5_stub.vhdl:5' bound to instance 'quadratur_decoder_1' of component 'design_1_quadratur_decoder_0_5' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:307]
+INFO: [Synth 8-638] synthesizing module 'design_1_quadratur_decoder_0_5' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_quadratur_decoder_0_5_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_state_machine_0_0' declared at 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_state_machine_0_0_stub.vhdl:5' bound to instance 'state_machine_0' of component 'design_1_state_machine_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:314]
+INFO: [Synth 8-638] synthesizing module 'design_1_state_machine_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/.Xil/Vivado-13604-DESKTOP-FP1UNT8/realtime/design_1_state_machine_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_2' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_2/synth/design_1_xlconcat_0_2.v:58' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_2' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:328]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_2' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_2/synth/design_1_xlconcat_0_2.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 2 - type: integer 
+	Parameter NUM_PORTS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (7#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_2' (8#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_2/synth/design_1_xlconcat_0_2.v:58]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_3' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_3/synth/design_1_xlconcat_0_3.v:58' bound to instance 'xlconcat_1' of component 'design_1_xlconcat_0_3' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:334]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_3' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_3/synth/design_1_xlconcat_0_3.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_3' (9#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_3/synth/design_1_xlconcat_0_3.v:58]
+INFO: [Synth 8-3491] module 'design_1_xlslice_0_0' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_0/synth/design_1_xlslice_0_0.v:57' bound to instance 'xlslice_0' of component 'design_1_xlslice_0_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:340]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_0_0' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_0/synth/design_1_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 16 - type: integer 
+	Parameter DIN_FROM bound to: 15 - type: integer 
+	Parameter DIN_TO bound to: 15 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (9#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_0_0' (10#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_0/synth/design_1_xlslice_0_0.v:57]
+INFO: [Synth 8-3491] module 'design_1_xlslice_0_1' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_1/synth/design_1_xlslice_0_1.v:57' bound to instance 'xlslice_1' of component 'design_1_xlslice_0_1' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:345]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_0_1' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_1/synth/design_1_xlslice_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 16 - type: integer 
+	Parameter DIN_FROM bound to: 14 - type: integer 
+	Parameter DIN_TO bound to: 14 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (10#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_0_1' (11#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_1/synth/design_1_xlslice_0_1.v:57]
+INFO: [Synth 8-3491] module 'design_1_xlslice_0_2' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_2/synth/design_1_xlslice_0_2.v:57' bound to instance 'xlslice_2' of component 'design_1_xlslice_0_2' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:350]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_0_2' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_2/synth/design_1_xlslice_0_2.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 16 - type: integer 
+	Parameter DIN_FROM bound to: 13 - type: integer 
+	Parameter DIN_TO bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' (11#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_0_2' (12#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_2/synth/design_1_xlslice_0_2.v:57]
+INFO: [Synth 8-3491] module 'design_1_xlslice_2_0' declared at 'c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_0/synth/design_1_xlslice_2_0.v:57' bound to instance 'xlslice_3' of component 'design_1_xlslice_2_0' [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:355]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_2_0' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_0/synth/design_1_xlslice_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 16 - type: integer 
+	Parameter DIN_FROM bound to: 12 - type: integer 
+	Parameter DIN_TO bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' (12#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_2_0' (13#1) [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_0/synth/design_1_xlslice_2_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (14#1) [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/synth/design_1.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (15#1) [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:30]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized4 has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized4 has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized4 has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized4 has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized4 has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized4 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized4 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[11]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[10]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[9]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[8]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[7]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[6]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[5]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized3 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[15]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[11]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[10]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[9]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[8]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[7]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[6]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[5]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized2 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[14]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[13]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[11]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[10]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[9]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[8]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[7]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[6]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[5]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[4]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized1 has unconnected port Din[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In2[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In3[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In4[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In5[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In6[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In7[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In8[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In9[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In10[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In11[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In12[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In13[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In14[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In15[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat__parameterized0 has unconnected port In31[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In31[0]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[7]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[6]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 920.309 ; gain = 308.586
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 920.309 ; gain = 308.586
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 920.309 ; gain = 308.586
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 920.309 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_0/design_1_pwm_control_0_0/design_1_pwm_control_0_0_in_context.xdc] for cell 'design_1_i/pwm_control_0'
+Finished Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_0/design_1_pwm_control_0_0/design_1_pwm_control_0_0_in_context.xdc] for cell 'design_1_i/pwm_control_0'
+Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_SPI_0_0/design_1_SPI_0_0/design_1_SPI_0_0_in_context.xdc] for cell 'design_1_i/SPI_0'
+Finished Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_SPI_0_0/design_1_SPI_0_0/design_1_SPI_0_0_in_context.xdc] for cell 'design_1_i/SPI_0'
+Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_state_machine_0_0/design_1_state_machine_0_0/design_1_state_machine_0_0_in_context.xdc] for cell 'design_1_i/state_machine_0'
+Finished Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_state_machine_0_0/design_1_state_machine_0_0/design_1_state_machine_0_0_in_context.xdc] for cell 'design_1_i/state_machine_0'
+Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_1/design_1_pwm_control_0_1/design_1_pwm_control_0_1_in_context.xdc] for cell 'design_1_i/pwm_control_1'
+Finished Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_1/design_1_pwm_control_0_1/design_1_pwm_control_0_1_in_context.xdc] for cell 'design_1_i/pwm_control_1'
+Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_quadratur_decoder_0_4/design_1_quadratur_decoder_0_4/design_1_quadratur_decoder_0_4_in_context.xdc] for cell 'design_1_i/quadratur_decoder_0'
+Finished Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_quadratur_decoder_0_4/design_1_quadratur_decoder_0_4/design_1_quadratur_decoder_0_4_in_context.xdc] for cell 'design_1_i/quadratur_decoder_0'
+Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_quadratur_decoder_0_5/design_1_quadratur_decoder_0_5/design_1_quadratur_decoder_0_5_in_context.xdc] for cell 'design_1_i/quadratur_decoder_1'
+Finished Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_quadratur_decoder_0_5/design_1_quadratur_decoder_0_5/design_1_quadratur_decoder_0_5_in_context.xdc] for cell 'design_1_i/quadratur_decoder_1'
+Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_delay_0_0/design_1_delay_0_0/design_1_delay_0_0_in_context.xdc] for cell 'design_1_i/delay_0'
+Finished Parsing XDC File [c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_delay_0_0/design_1_delay_0_0/design_1_delay_0_0_in_context.xdc] for cell 'design_1_i/delay_0'
+Parsing XDC File [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:28]
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:43]
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:78]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:82]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:83]
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:84]
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:85]
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:86]
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:89]
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:95]
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:97]
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:98]
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:100]
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:101]
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:102]
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:103]
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:104]
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:105]
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:106]
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:107]
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:115]
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:116]
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:117]
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:118]
+WARNING: [Vivado 12-584] No ports matched 'JA[4]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:133]
+WARNING: [Vivado 12-584] No ports matched 'JA[5]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:135]
+WARNING: [Vivado 12-584] No ports matched 'JA[6]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:137]
+WARNING: [Vivado 12-584] No ports matched 'JA[7]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:198]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:199]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:201]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:202]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:204]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:205]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:207]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:208]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[4]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:210]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[4]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:211]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[5]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:213]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[5]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:214]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[6]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:216]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[6]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:217]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[7]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:219]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[7]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:220]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:225]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:226]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:227]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:228]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:229]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:230]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:231]
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:232]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:233]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:234]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:235]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[1]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:236]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:237]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[2]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:238]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:239]
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[3]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:240]
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:241]
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[0]'. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:242]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc:242]
+Finished Parsing XDC File [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/constrs_1/new/basys3_master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 969.523 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 969.523 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 969.523 ; gain = 357.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 969.523 ; gain = 357.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/pwm_control_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/SPI_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/state_machine_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlslice_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlslice_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlslice_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/basys3_led. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/pwm_control_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlslice_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/quadratur_decoder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/quadratur_decoder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/delay_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/JB0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/JB1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/JC0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/JC1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 969.523 ; gain = 357.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 969.523 ; gain = 357.801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 969.523 ; gain = 357.801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 978.055 ; gain = 366.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 978.129 ; gain = 366.406
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 987.660 ; gain = 375.938
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-------------------------------+----------+
+|      |BlackBox name                  |Instances |
++------+-------------------------------+----------+
+|1     |design_1_SPI_0_0               |         1|
+|2     |design_1_delay_0_0             |         1|
+|3     |design_1_pwm_control_0_0       |         1|
+|4     |design_1_pwm_control_0_1       |         1|
+|5     |design_1_quadratur_decoder_0_4 |         1|
+|6     |design_1_quadratur_decoder_0_5 |         1|
+|7     |design_1_state_machine_0_0     |         1|
++------+-------------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------------------+------+
+|      |Cell                                  |Count |
++------+--------------------------------------+------+
+|1     |design_1_SPI_0_0_bbox_0               |     1|
+|2     |design_1_delay_0_0_bbox_1             |     1|
+|3     |design_1_pwm_control_0_0_bbox_2       |     1|
+|4     |design_1_pwm_control_0_1_bbox_3       |     1|
+|5     |design_1_quadratur_decoder_0_4_bbox_4 |     1|
+|6     |design_1_quadratur_decoder_0_5_bbox_5 |     1|
+|7     |design_1_state_machine_0_0_bbox_6     |     1|
+|8     |IBUF                                  |    11|
+|9     |OBUF                                  |    16|
++------+--------------------------------------+------+
+
+Report Instance Areas: 
++------+---------------+----------------------+------+
+|      |Instance       |Module                |Cells |
++------+---------------+----------------------+------+
+|1     |top            |                      |   102|
+|2     |  design_1_i   |design_1              |    75|
+|3     |    JB0        |design_1_xlslice_4_8  |     0|
+|4     |    JB1        |design_1_xlslice_5_0  |     0|
+|5     |    JC0        |design_1_xlslice_5_1  |     0|
+|6     |    JC1        |design_1_xlslice_5_2  |     0|
+|7     |    basys3_led |design_1_xlconcat_0_0 |     0|
+|8     |    xlconcat_0 |design_1_xlconcat_0_2 |     0|
+|9     |    xlconcat_1 |design_1_xlconcat_0_3 |     0|
+|10    |    xlslice_0  |design_1_xlslice_0_0  |     0|
+|11    |    xlslice_1  |design_1_xlslice_0_1  |     0|
+|12    |    xlslice_2  |design_1_xlslice_0_2  |     0|
+|13    |    xlslice_3  |design_1_xlslice_2_0  |     0|
++------+---------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 80 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:32 . Memory (MB): peak = 1003.469 ; gain = 342.531
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.469 ; gain = 391.746
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1013.500 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1018.930 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+83 Infos, 201 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 1018.930 ; gain = 681.246
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1018.930 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 17 11:28:07 2020...
