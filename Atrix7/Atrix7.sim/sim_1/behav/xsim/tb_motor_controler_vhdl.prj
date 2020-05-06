@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Atrix7.srcs/sources_1/new/motor_controler.vhd" \
+"../../../../Atrix7.srcs/sim_1/new/tb_motor_controler.vhd" \
+
+# Do not sort compile order
+nosort

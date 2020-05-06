@@ -37,10 +37,12 @@ entity state_machine is
     frame_choice:   in std_logic;
     motor_choice:   in std_logic;
     request_type:   in std_logic;
+    parity_check:   in std_logic;
     
     --motor
     motor_ctrl_A:   out std_logic;
     motor_ctrl_B:   out std_logic;
+    
     
     --position
     quad_enc_A:     in std_logic_vector(14 downto 0);
@@ -54,12 +56,12 @@ entity state_machine is
 end state_machine;
 
 architecture Behavioral of state_machine is
-signal frame : std_logic_vector(2 downto 0);
 begin
     process(clk_in)
+    variable frame : std_logic_vector(2 downto 0);
     begin
         if (rising_edge(clk_in)) then
-            frame <= frame_choice & motor_choice & request_type;
+            frame := frame_choice & motor_choice & request_type;
             case (frame) is
             --request frames
                 when "000" => --motor 0 position
@@ -69,7 +71,7 @@ begin
                 when "001" => --motor 0 index
                     motor_ctrl_A    <= '0';
                     motor_ctrl_B    <= '0';
-                    data_out        <= (14  => index_ctrl_A, others => '0');
+                    data_out        <= (0  => index_ctrl_A, others => '0');
                 when "010" => -- motor 1 position
                     motor_ctrl_A    <= '0';
                     motor_ctrl_B    <= '0';
@@ -78,7 +80,7 @@ begin
                 when "011" => -- motor 1 index
                     motor_ctrl_A    <= '0';
                     motor_ctrl_B    <= '0';
-                    data_out        <= (14 => index_ctrl_B, others => '0');-- <--
+                    data_out        <= (0 => index_ctrl_B, others => '0');
                 
                 --command frames
                 when "100" => -- pwm out motor 0

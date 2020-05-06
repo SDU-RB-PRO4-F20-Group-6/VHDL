@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Tue Apr 14 12:33:40 2020
+-- Date        : Wed May  6 22:16:19 2020
 -- Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_1/design_1_pwm_control_0_1_sim_netlist.vhdl
+--               C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_1/design_1_pwm_control_0_1_sim_netlist.vhdl
 -- Design      : design_1_pwm_control_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,6 +17,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_pwm_control_0_1_pwm_control is
   port (
     pwm_signal : out STD_LOGIC;
+    reset : in STD_LOGIC;
     enable : in STD_LOGIC;
     pwm_trigger : in STD_LOGIC_VECTOR ( 8 downto 0 );
     clk_in : in STD_LOGIC
@@ -396,7 +397,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(0),
       Q => trigger_buffer(0),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -407,7 +408,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(1),
       Q => trigger_buffer(1),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -418,7 +419,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(2),
       Q => trigger_buffer(2),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -429,7 +430,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(3),
       Q => trigger_buffer(3),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[4]\: unisim.vcomponents.FDRE
     generic map(
@@ -440,7 +441,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(4),
       Q => trigger_buffer(4),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[5]\: unisim.vcomponents.FDRE
     generic map(
@@ -451,7 +452,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(5),
       Q => trigger_buffer(5),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[6]\: unisim.vcomponents.FDRE
     generic map(
@@ -462,7 +463,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(6),
       Q => trigger_buffer(6),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[7]\: unisim.vcomponents.FDRE
     generic map(
@@ -473,7 +474,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(7),
       Q => trigger_buffer(7),
-      R => '0'
+      R => reset
     );
 \trigger_buffer_reg[8]\: unisim.vcomponents.FDRE
     generic map(
@@ -484,7 +485,7 @@ pwm_signal_reg: unisim.vcomponents.FDRE
       CE => enable,
       D => pwm_trigger(8),
       Q => trigger_buffer(8),
-      R => '0'
+      R => reset
     );
 end STRUCTURE;
 library IEEE;
@@ -496,6 +497,7 @@ entity design_1_pwm_control_0_1 is
     clk_in : in STD_LOGIC;
     pwm_trigger : in STD_LOGIC_VECTOR ( 8 downto 0 );
     enable : in STD_LOGIC;
+    reset : in STD_LOGIC;
     pwm_signal : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -511,12 +513,17 @@ entity design_1_pwm_control_0_1 is
 end design_1_pwm_control_0_1;
 
 architecture STRUCTURE of design_1_pwm_control_0_1 is
+  attribute x_interface_info : string;
+  attribute x_interface_info of reset : signal is "xilinx.com:signal:reset:1.0 reset RST";
+  attribute x_interface_parameter : string;
+  attribute x_interface_parameter of reset : signal is "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 begin
 U0: entity work.design_1_pwm_control_0_1_pwm_control
      port map (
       clk_in => clk_in,
       enable => enable,
       pwm_signal => pwm_signal,
-      pwm_trigger(8 downto 0) => pwm_trigger(8 downto 0)
+      pwm_trigger(8 downto 0) => pwm_trigger(8 downto 0),
+      reset => reset
     );
 end STRUCTURE;

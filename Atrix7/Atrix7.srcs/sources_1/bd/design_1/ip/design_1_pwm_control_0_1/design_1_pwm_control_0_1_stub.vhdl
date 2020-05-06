@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Tue Apr 14 12:33:40 2020
+-- Date        : Wed May  6 22:16:19 2020
 -- Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_1/design_1_pwm_control_0_1_stub.vhdl
+--               C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_pwm_control_0_1/design_1_pwm_control_0_1_stub.vhdl
 -- Design      : design_1_pwm_control_0_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1
@@ -17,6 +17,7 @@ entity design_1_pwm_control_0_1 is
     clk_in : in STD_LOGIC;
     pwm_trigger : in STD_LOGIC_VECTOR ( 8 downto 0 );
     enable : in STD_LOGIC;
+    reset : in STD_LOGIC;
     pwm_signal : out STD_LOGIC
   );
 
@@ -26,7 +27,7 @@ architecture stub of design_1_pwm_control_0_1 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk_in,pwm_trigger[8:0],enable,pwm_signal";
+attribute black_box_pad_pin of stub : architecture is "clk_in,pwm_trigger[8:0],enable,reset,pwm_signal";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "pwm_control,Vivado 2019.2";
 begin

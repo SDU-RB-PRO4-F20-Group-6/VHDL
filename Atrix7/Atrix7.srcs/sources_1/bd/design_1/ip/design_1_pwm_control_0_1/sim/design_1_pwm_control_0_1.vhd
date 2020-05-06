@@ -58,6 +58,7 @@ ENTITY design_1_pwm_control_0_1 IS
     clk_in : IN STD_LOGIC;
     pwm_trigger : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
     enable : IN STD_LOGIC;
+    reset : IN STD_LOGIC;
     pwm_signal : OUT STD_LOGIC
   );
 END design_1_pwm_control_0_1;
@@ -70,17 +71,23 @@ ARCHITECTURE design_1_pwm_control_0_1_arch OF design_1_pwm_control_0_1 IS
       clk_in : IN STD_LOGIC;
       pwm_trigger : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
       enable : IN STD_LOGIC;
+      reset : IN STD_LOGIC;
       pwm_signal : OUT STD_LOGIC
     );
   END COMPONENT pwm_control;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_pwm_control_0_1_arch: ARCHITECTURE IS "module_ref";
+  ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
 BEGIN
   U0 : pwm_control
     PORT MAP (
       clk_in => clk_in,
       pwm_trigger => pwm_trigger,
       enable => enable,
+      reset => reset,
       pwm_signal => pwm_signal
     );
 END design_1_pwm_control_0_1_arch;

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Atrix7.srcs/sources_1/new/SPI.vhd" \
+"../../../../Atrix7.srcs/sim_1/new/SPI_TB.vhd" \
+
+# Do not sort compile order
+nosort

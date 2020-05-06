@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Tue Apr 14 12:33:41 2020
+// Date        : Wed May  6 22:16:19 2020
 // Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_pwm_control_0_0_sim_netlist.v
@@ -19,30 +19,36 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clk_in,
     pwm_trigger,
     enable,
+    reset,
     pwm_signal);
   input clk_in;
   input [8:0]pwm_trigger;
   input enable;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
   output pwm_signal;
 
   wire clk_in;
   wire enable;
   wire pwm_signal;
   wire [8:0]pwm_trigger;
+  wire reset;
 
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control U0
        (.clk_in(clk_in),
         .enable(enable),
         .pwm_signal(pwm_signal),
-        .pwm_trigger(pwm_trigger));
+        .pwm_trigger(pwm_trigger),
+        .reset(reset));
 endmodule
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
    (pwm_signal,
+    reset,
     enable,
     pwm_trigger,
     clk_in);
   output pwm_signal;
+  input reset;
   input enable;
   input [8:0]pwm_trigger;
   input clk_in;
@@ -70,6 +76,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
   wire pwm_signal0_carry_n_3;
   wire pwm_signal_i_1_n_0;
   wire [8:0]pwm_trigger;
+  wire reset;
   wire [8:0]trigger_buffer;
   wire [3:0]NLW_pwm_signal0_carry_O_UNCONNECTED;
   wire [3:1]NLW_pwm_signal0_carry__0_CO_UNCONNECTED;
@@ -319,7 +326,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[0]),
         .Q(trigger_buffer[0]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[1] 
@@ -327,7 +334,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[1]),
         .Q(trigger_buffer[1]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[2] 
@@ -335,7 +342,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[2]),
         .Q(trigger_buffer[2]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[3] 
@@ -343,7 +350,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[3]),
         .Q(trigger_buffer[3]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[4] 
@@ -351,7 +358,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[4]),
         .Q(trigger_buffer[4]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[5] 
@@ -359,7 +366,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[5]),
         .Q(trigger_buffer[5]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[6] 
@@ -367,7 +374,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[6]),
         .Q(trigger_buffer[6]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[7] 
@@ -375,7 +382,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[7]),
         .Q(trigger_buffer[7]),
-        .R(1'b0));
+        .R(reset));
   FDRE #(
     .INIT(1'b0)) 
     \trigger_buffer_reg[8] 
@@ -383,7 +390,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pwm_control
         .CE(enable),
         .D(pwm_trigger[8]),
         .Q(trigger_buffer[8]),
-        .R(1'b0));
+        .R(reset));
 endmodule
 `ifndef GLBL
 `define GLBL

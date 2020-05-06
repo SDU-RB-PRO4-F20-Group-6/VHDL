@@ -38,6 +38,7 @@ entity pwm_control is
     pwm_trigger:in std_logic_vector (8 downto 0);  --input
 --    at_falling:  in std_logic;
     enable:     in std_logic;
+    reset:      in std_logic;
     pwm_signal: out std_logic);                     --output
 end pwm_control;
 
@@ -51,12 +52,15 @@ begin
             if (enable = '1') then
                 trigger_buffer <= pwm_trigger;
             end if;
+            if (reset = '1') then
+                trigger_buffer <= (others => '0');
+            end if;
             if (clk_counter <= unsigned(trigger_buffer)) then
                 pwm_signal <= '1'; --xor at_falling;
             elsif (clk_counter > unsigned(trigger_buffer)) then
                 pwm_signal <= '0'; --xor at_falling;
             end if;
-            clk_counter := clk_counter + 1;
+            clk_counter := (clk_counter + 1) mod 512;
         end if;
     end process;
 end Behavioral;

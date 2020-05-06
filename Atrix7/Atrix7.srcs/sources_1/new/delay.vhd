@@ -37,8 +37,8 @@ entity delay is
         clock   : integer := 1);
     Port (
         clk_in  : in std_logic;
-        input   : in std_logic_vector(ports-1 downto 0);
-        output  : out std_logic_vector(ports-1 downto 0));
+        signal_in   : in std_logic_vector(ports-1 downto 0);
+        signal_out  : out std_logic_vector(ports-1 downto 0));
 end delay;
 
 architecture Behavioral of delay is
@@ -49,13 +49,13 @@ begin
     begin
     
         if(rising_edge(clk_in)) then
-            if (preValue /= input) then 
+            if (preValue /= signal_in) then 
                 counter := 0;
-                preValue <= input;
+                preValue <= signal_in;
             end if;
             
             if(counter = clock) then 
-                output <= input;
+                signal_out <= signal_in;
             else
                 counter := counter + 1;
             end if;

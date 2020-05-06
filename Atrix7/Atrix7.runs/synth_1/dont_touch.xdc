@@ -9,9 +9,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1 || ORI
 # IP: bd/design_1/ip/design_1_pwm_control_0_0/design_1_pwm_control_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_pwm_control_0_0 || ORIG_REF_NAME==design_1_pwm_control_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_SPI_0_0/design_1_SPI_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_SPI_0_0 || ORIG_REF_NAME==design_1_SPI_0_0} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_state_machine_0_0/design_1_state_machine_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_state_machine_0_0 || ORIG_REF_NAME==design_1_state_machine_0_0} -quiet] -quiet
 
@@ -59,5 +56,47 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xlslic
 
 # IP: bd/design_1/ip/design_1_xlslice_5_2/design_1_xlslice_5_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xlslice_5_2 || ORIG_REF_NAME==design_1_xlslice_5_2} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_Evenparity_0_0/design_1_Evenparity_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_Evenparity_0_0 || ORIG_REF_NAME==design_1_Evenparity_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_parity_check_0/design_1_parity_check_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_parity_check_0 || ORIG_REF_NAME==design_1_parity_check_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_xlconcat_2_0/design_1_xlconcat_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xlconcat_2_0 || ORIG_REF_NAME==design_1_xlconcat_2_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_SPI_0_1/design_1_SPI_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_SPI_0_1 || ORIG_REF_NAME==design_1_SPI_0_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_JB6_0/design_1_JB6_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_JB6_0 || ORIG_REF_NAME==design_1_JB6_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_JB6_1/design_1_JB6_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_JB6_1 || ORIG_REF_NAME==design_1_JB6_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_xlconcat_3_1/design_1_xlconcat_3_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xlconcat_3_1 || ORIG_REF_NAME==design_1_xlconcat_3_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_xlconstant_0_0/design_1_xlconstant_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xlconstant_0_0 || ORIG_REF_NAME==design_1_xlconstant_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_motor_controler_0_0/design_1_motor_controler_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_motor_controler_0_0 || ORIG_REF_NAME==design_1_motor_controler_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_motor_controler_0_1/design_1_motor_controler_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_motor_controler_0_1 || ORIG_REF_NAME==design_1_motor_controler_0_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_delay_0_1/design_1_delay_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_delay_0_1 || ORIG_REF_NAME==design_1_delay_0_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_delay_1_0/design_1_delay_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_delay_1_0 || ORIG_REF_NAME==design_1_delay_1_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_enable_0_0/design_1_enable_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_enable_0_0 || ORIG_REF_NAME==design_1_enable_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_enable_1_0/design_1_enable_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_enable_1_0 || ORIG_REF_NAME==design_1_enable_1_0} -quiet] -quiet
 
 # XDC: bd/design_1/design_1_ooc.xdc

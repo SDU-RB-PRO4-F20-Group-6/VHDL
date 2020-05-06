@@ -126,7 +126,8 @@ set_property -dict { PACKAGE_PIN J1     IOSTANDARD LVCMOS33 } [get_ports {mosi}]
 #Sch name = JA2					
 set_property -dict { PACKAGE_PIN L2     IOSTANDARD LVCMOS33 } [get_ports {miso}]	
 #Sch name = JA3			
-set_property -dict { PACKAGE_PIN J2     IOSTANDARD LVCMOS33 } [get_ports {ss}]	
+set_property -dict { PACKAGE_PIN J2     IOSTANDARD LVCMOS33 } [get_ports {ss}]
+set_property PULLUP true [get_ports ss]	
 #Sch name = JA4					
 set_property -dict { PACKAGE_PIN G2     IOSTANDARD LVCMOS33 } [get_ports {sclk}]	
 #Sch name = JA7			

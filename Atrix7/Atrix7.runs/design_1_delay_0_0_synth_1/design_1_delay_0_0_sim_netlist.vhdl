@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Wed Apr 15 14:27:03 2020
+-- Date        : Sat Apr 25 22:06:44 2020
 -- Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_delay_0_0_sim_netlist.vhdl
@@ -16,8 +16,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_delay is
   port (
-    output : out STD_LOGIC_VECTOR ( 8 downto 0 );
-    input : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    signal_out : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    signal_in : in STD_LOGIC_VECTOR ( 8 downto 0 );
     clk_in : in STD_LOGIC
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_delay;
@@ -56,10 +56,10 @@ counter1_carry_i_1: unisim.vcomponents.LUT6
     )
         port map (
       I0 => preValue(6),
-      I1 => input(6),
-      I2 => input(8),
+      I1 => signal_in(6),
+      I2 => signal_in(8),
       I3 => preValue(8),
-      I4 => input(7),
+      I4 => signal_in(7),
       I5 => preValue(7),
       O => counter1_carry_i_1_n_0
     );
@@ -69,10 +69,10 @@ counter1_carry_i_2: unisim.vcomponents.LUT6
     )
         port map (
       I0 => preValue(3),
-      I1 => input(3),
-      I2 => input(5),
+      I1 => signal_in(3),
+      I2 => signal_in(5),
       I3 => preValue(5),
-      I4 => input(4),
+      I4 => signal_in(4),
       I5 => preValue(4),
       O => counter1_carry_i_2_n_0
     );
@@ -82,10 +82,10 @@ counter1_carry_i_3: unisim.vcomponents.LUT6
     )
         port map (
       I0 => preValue(0),
-      I1 => input(0),
-      I2 => input(2),
+      I1 => signal_in(0),
+      I2 => signal_in(2),
       I3 => preValue(2),
-      I4 => input(1),
+      I4 => signal_in(1),
       I5 => preValue(1),
       O => counter1_carry_i_3_n_0
     );
@@ -100,7 +100,79 @@ counter1_carry_i_3: unisim.vcomponents.LUT6
       Q => \counter_reg_n_0_[0]\,
       R => '0'
     );
-\output[8]_i_1\: unisim.vcomponents.LUT2
+\preValue_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(0),
+      Q => preValue(0),
+      R => '0'
+    );
+\preValue_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(1),
+      Q => preValue(1),
+      R => '0'
+    );
+\preValue_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(2),
+      Q => preValue(2),
+      R => '0'
+    );
+\preValue_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(3),
+      Q => preValue(3),
+      R => '0'
+    );
+\preValue_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(4),
+      Q => preValue(4),
+      R => '0'
+    );
+\preValue_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(5),
+      Q => preValue(5),
+      R => '0'
+    );
+\preValue_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(6),
+      Q => preValue(6),
+      R => '0'
+    );
+\preValue_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(7),
+      Q => preValue(7),
+      R => '0'
+    );
+\preValue_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk_in,
+      CE => counter1_carry_n_1,
+      D => signal_in(8),
+      Q => preValue(8),
+      R => '0'
+    );
+\signal_out[8]_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
     )
@@ -109,148 +181,76 @@ counter1_carry_i_3: unisim.vcomponents.LUT6
       I1 => counter1_carry_n_1,
       O => counter
     );
-\output_reg[0]\: unisim.vcomponents.FDRE
+\signal_out_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(0),
-      Q => output(0),
+      D => signal_in(0),
+      Q => signal_out(0),
       R => '0'
     );
-\output_reg[1]\: unisim.vcomponents.FDRE
+\signal_out_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(1),
-      Q => output(1),
+      D => signal_in(1),
+      Q => signal_out(1),
       R => '0'
     );
-\output_reg[2]\: unisim.vcomponents.FDRE
+\signal_out_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(2),
-      Q => output(2),
+      D => signal_in(2),
+      Q => signal_out(2),
       R => '0'
     );
-\output_reg[3]\: unisim.vcomponents.FDRE
+\signal_out_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(3),
-      Q => output(3),
+      D => signal_in(3),
+      Q => signal_out(3),
       R => '0'
     );
-\output_reg[4]\: unisim.vcomponents.FDRE
+\signal_out_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(4),
-      Q => output(4),
+      D => signal_in(4),
+      Q => signal_out(4),
       R => '0'
     );
-\output_reg[5]\: unisim.vcomponents.FDRE
+\signal_out_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(5),
-      Q => output(5),
+      D => signal_in(5),
+      Q => signal_out(5),
       R => '0'
     );
-\output_reg[6]\: unisim.vcomponents.FDRE
+\signal_out_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(6),
-      Q => output(6),
+      D => signal_in(6),
+      Q => signal_out(6),
       R => '0'
     );
-\output_reg[7]\: unisim.vcomponents.FDRE
+\signal_out_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(7),
-      Q => output(7),
+      D => signal_in(7),
+      Q => signal_out(7),
       R => '0'
     );
-\output_reg[8]\: unisim.vcomponents.FDRE
+\signal_out_reg[8]\: unisim.vcomponents.FDRE
      port map (
       C => clk_in,
       CE => counter,
-      D => input(8),
-      Q => output(8),
-      R => '0'
-    );
-\preValue_reg[0]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(0),
-      Q => preValue(0),
-      R => '0'
-    );
-\preValue_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(1),
-      Q => preValue(1),
-      R => '0'
-    );
-\preValue_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(2),
-      Q => preValue(2),
-      R => '0'
-    );
-\preValue_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(3),
-      Q => preValue(3),
-      R => '0'
-    );
-\preValue_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(4),
-      Q => preValue(4),
-      R => '0'
-    );
-\preValue_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(5),
-      Q => preValue(5),
-      R => '0'
-    );
-\preValue_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(6),
-      Q => preValue(6),
-      R => '0'
-    );
-\preValue_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(7),
-      Q => preValue(7),
-      R => '0'
-    );
-\preValue_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => counter1_carry_n_1,
-      D => input(8),
-      Q => preValue(8),
+      D => signal_in(8),
+      Q => signal_out(8),
       R => '0'
     );
 end STRUCTURE;
@@ -261,8 +261,8 @@ use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     clk_in : in STD_LOGIC;
-    input : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    output : out STD_LOGIC_VECTOR ( 8 downto 0 )
+    signal_in : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    signal_out : out STD_LOGIC_VECTOR ( 8 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
@@ -281,7 +281,7 @@ begin
 U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_delay
      port map (
       clk_in => clk_in,
-      input(8 downto 0) => input(8 downto 0),
-      output(8 downto 0) => output(8 downto 0)
+      signal_in(8 downto 0) => signal_in(8 downto 0),
+      signal_out(8 downto 0) => signal_out(8 downto 0)
     );
 end STRUCTURE;

@@ -59,6 +59,7 @@ ENTITY design_1_state_machine_0_0 IS
     frame_choice : IN STD_LOGIC;
     motor_choice : IN STD_LOGIC;
     request_type : IN STD_LOGIC;
+    parity_check : IN STD_LOGIC;
     motor_ctrl_A : OUT STD_LOGIC;
     motor_ctrl_B : OUT STD_LOGIC;
     quad_enc_A : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
@@ -78,6 +79,7 @@ ARCHITECTURE design_1_state_machine_0_0_arch OF design_1_state_machine_0_0 IS
       frame_choice : IN STD_LOGIC;
       motor_choice : IN STD_LOGIC;
       request_type : IN STD_LOGIC;
+      parity_check : IN STD_LOGIC;
       motor_ctrl_A : OUT STD_LOGIC;
       motor_ctrl_B : OUT STD_LOGIC;
       quad_enc_A : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
@@ -102,6 +104,7 @@ BEGIN
       frame_choice => frame_choice,
       motor_choice => motor_choice,
       request_type => request_type,
+      parity_check => parity_check,
       motor_ctrl_A => motor_ctrl_A,
       motor_ctrl_B => motor_ctrl_B,
       quad_enc_A => quad_enc_A,

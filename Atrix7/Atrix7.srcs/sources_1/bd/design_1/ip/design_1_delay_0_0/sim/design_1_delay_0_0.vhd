@@ -56,8 +56,8 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_delay_0_0 IS
   PORT (
     clk_in : IN STD_LOGIC;
-    input : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-    output : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+    signal_in : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+    signal_out : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
   );
 END design_1_delay_0_0;
 
@@ -71,8 +71,8 @@ ARCHITECTURE design_1_delay_0_0_arch OF design_1_delay_0_0 IS
     );
     PORT (
       clk_in : IN STD_LOGIC;
-      input : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-      output : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+      signal_in : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+      signal_out : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
     );
   END COMPONENT delay;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -85,7 +85,7 @@ BEGIN
     )
     PORT MAP (
       clk_in => clk_in,
-      input => input,
-      output => output
+      signal_in => signal_in,
+      signal_out => signal_out
     );
 END design_1_delay_0_0_arch;

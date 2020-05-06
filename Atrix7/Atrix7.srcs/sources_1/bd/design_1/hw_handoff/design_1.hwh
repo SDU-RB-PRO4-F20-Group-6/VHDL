@@ -1,18 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 17 11:26:35 2020" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May  6 22:55:07 2020" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="design_1" PACKAGE="cpg236" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="pwm_control_0" PORT="clk_in"/>
-        <CONNECTION INSTANCE="pwm_control_1" PORT="clk_in"/>
         <CONNECTION INSTANCE="delay_0" PORT="clk_in"/>
-        <CONNECTION INSTANCE="quadratur_decoder_0" PORT="clk_in"/>
-        <CONNECTION INSTANCE="quadratur_decoder_1" PORT="clk_in"/>
-        <CONNECTION INSTANCE="state_machine_0" PORT="clk_in"/>
         <CONNECTION INSTANCE="SPI_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="delay_2" PORT="clk_in"/>
+        <CONNECTION INSTANCE="delay_1" PORT="clk_in"/>
+        <CONNECTION INSTANCE="enable_0" PORT="clk"/>
+        <CONNECTION INSTANCE="enable_1" PORT="clk"/>
+        <CONNECTION INSTANCE="quadratur_motor_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="quadratur_motor_1" PORT="clk_in"/>
+        <CONNECTION INSTANCE="motor_controler_0" PORT="clk"/>
+        <CONNECTION INSTANCE="motor_controler_1" PORT="clk"/>
+        <CONNECTION INSTANCE="motor_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="motor_1" PORT="clk_in"/>
+        <CONNECTION INSTANCE="state_machine_0" PORT="clk_in"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="sclk" SIGIS="undef" SIGNAME="External_Ports_sclk">
@@ -27,22 +33,12 @@
     </PORT>
     <PORT DIR="I" NAME="ss" SIGIS="undef" SIGNAME="External_Ports_ss">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="SPI_0" PORT="spi_ss"/>
+        <CONNECTION INSTANCE="SPI_0" PORT="spi_ss_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="14" NAME="led" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
+    <PORT DIR="O" LEFT="15" NAME="led" RIGHT="0" SIGIS="undef" SIGNAME="basys3_led_dout">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="state_machine_0" PORT="data_out"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="btnU" SIGIS="undef" SIGNAME="External_Ports_btnU">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="state_machine_0" PORT="index_ctrl_A"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="btnD" SIGIS="undef" SIGNAME="External_Ports_btnD">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="state_machine_0" PORT="index_ctrl_B"/>
+        <CONNECTION INSTANCE="basys3_led" PORT="dout"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="miso" SIGIS="undef" SIGNAME="SPI_0_spi_miso">
@@ -52,20 +48,25 @@
     </PORT>
     <PORT DIR="I" NAME="btnC" SIGIS="rst" SIGNAME="External_Ports_btnC">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="quadratur_decoder_1" PORT="reset"/>
-        <CONNECTION INSTANCE="quadratur_decoder_0" PORT="reset"/>
+        <CONNECTION INSTANCE="quadratur_motor_0" PORT="reset"/>
+        <CONNECTION INSTANCE="quadratur_motor_1" PORT="reset"/>
+        <CONNECTION INSTANCE="motor_0" PORT="reset"/>
+        <CONNECTION INSTANCE="motor_1" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="7" NAME="JB" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="JB0" PORT="Din"/>
         <CONNECTION INSTANCE="JB1" PORT="Din"/>
+        <CONNECTION INSTANCE="JB2" PORT="Din"/>
+        <CONNECTION INSTANCE="JB5" PORT="Din"/>
+        <CONNECTION INSTANCE="JB6" PORT="Din"/>
+        <CONNECTION INSTANCE="index_0" PORT="Din"/>
+        <CONNECTION INSTANCE="index_1" PORT="Din"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="7" NAME="JC" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JC">
+    <PORT DIR="O" LEFT="7" NAME="JC" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_3_dout">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="JC0" PORT="Din"/>
-        <CONNECTION INSTANCE="JC1" PORT="Din"/>
+        <CONNECTION INSTANCE="xlconcat_3" PORT="dout"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -73,37 +74,13 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
-    <MODULE COREREVISION="2" FULLNAME="/JB0" HWVERSION="1.0" INSTANCE="JB0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="0"/>
-        <PARAMETER NAME="DIN_TO" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_4_8"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="JB"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="JB0_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="2" FULLNAME="/JB1" HWVERSION="1.0" INSTANCE="JB1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="1"/>
         <PARAMETER NAME="DIN_TO" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_5_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_4_8"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -115,29 +92,53 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="JB1_Dout">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/JB2" HWVERSION="1.0" INSTANCE="JB2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="2"/>
+        <PARAMETER NAME="DIN_TO" VALUE="2"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_5_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="JB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="JB2_Dout">
+          <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/JC0" HWVERSION="1.0" INSTANCE="JC0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/JB5" HWVERSION="1.0" INSTANCE="JB5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="0"/>
-        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="5"/>
+        <PARAMETER NAME="DIN_TO" VALUE="5"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_5_1"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JC">
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="JC"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="JB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="JC0_Dout">
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="JB5_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_1" PORT="In0"/>
           </CONNECTIONS>
@@ -145,25 +146,50 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/JC1" HWVERSION="1.0" INSTANCE="JC1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/JB6" HWVERSION="1.0" INSTANCE="JB6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="1"/>
-        <PARAMETER NAME="DIN_TO" VALUE="1"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="6"/>
+        <PARAMETER NAME="DIN_TO" VALUE="6"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_5_2"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JC">
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="JC"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="JB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="JC1_Dout">
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="JB6_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_1" PORT="In1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/Motor" HWVERSION="1.0" INSTANCE="Motor" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="14"/>
+        <PARAMETER NAME="DIN_TO" VALUE="14"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="Motor_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="basys3_led" PORT="In6"/>
+            <CONNECTION INSTANCE="state_machine_0" PORT="motor_choice"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -172,7 +198,7 @@
     <MODULE COREREVISION="1" FULLNAME="/SPI_0" HWVERSION="1.0" INSTANCE="SPI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SPI" VLNV="xilinx.com:module_ref:SPI:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_SPI_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_SPI_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -191,7 +217,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="mosi"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="spi_ss" SIGIS="undef" SIGNAME="External_Ports_ss">
+        <PORT DIR="I" NAME="spi_ss_n" SIGIS="undef" SIGNAME="External_Ports_ss">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="ss"/>
           </CONNECTIONS>
@@ -203,14 +229,16 @@
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="spi_data_in" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_1" PORT="Din"/>
-            <CONNECTION INSTANCE="xlslice_2" PORT="Din"/>
-            <CONNECTION INSTANCE="xlslice_3" PORT="Din"/>
+            <CONNECTION INSTANCE="frame_type" PORT="Din"/>
+            <CONNECTION INSTANCE="Motor" PORT="Din"/>
+            <CONNECTION INSTANCE="dir_or_request_type" PORT="Din"/>
+            <CONNECTION INSTANCE="parity_check" PORT="data"/>
+            <CONNECTION INSTANCE="pwm_data" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="spi_data_out" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
+        <PORT DIR="I" LEFT="15" NAME="spi_data_out" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="data_out"/>
+            <CONNECTION INSTANCE="xlconcat_2" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -223,7 +251,7 @@
         <PARAMETER NAME="IN1_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="9"/>
         <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
@@ -252,48 +280,58 @@
         <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="16"/>
-        <PARAMETER NAME="NUM_PORTS" VALUE="16"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_xlconcat_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="pwm_control_0_pwm_signal">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="8" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="pwm_data_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="pwm_control_0" PORT="pwm_signal"/>
+            <CONNECTION INSTANCE="pwm_data" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="pwm_control_1_pwm_signal">
+        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="pwm_control_1" PORT="pwm_signal"/>
+            <CONNECTION INSTANCE="dir_or_request_type" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_2_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In6" RIGHT="0" SIGIS="undef" SIGNAME="Motor_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_2" PORT="Dout"/>
+            <CONNECTION INSTANCE="Motor" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In7" RIGHT="0" SIGIS="undef" SIGNAME="frame_type_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
+            <CONNECTION INSTANCE="frame_type" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="basys3_led_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="led"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In6" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In7" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In8" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In9" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In10" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In11" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In12" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In13" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In14" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In15" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="6" FULLNAME="/constant_1" HWVERSION="1.1" INSTANCE="constant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="constant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_3" PORT="In2"/>
+            <CONNECTION INSTANCE="xlconcat_3" PORT="In6"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -311,21 +349,235 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="input" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_3_Dout">
+        <PORT DIR="I" LEFT="8" NAME="signal_in" RIGHT="0" SIGIS="undef" SIGNAME="pwm_data_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_3" PORT="Dout"/>
+            <CONNECTION INSTANCE="pwm_data" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="8" NAME="output" RIGHT="0" SIGIS="undef" SIGNAME="delay_0_output">
+        <PORT DIR="O" LEFT="8" NAME="signal_out" RIGHT="0" SIGIS="undef" SIGNAME="delay_0_signal_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="pwm_control_1" PORT="pwm_trigger"/>
-            <CONNECTION INSTANCE="pwm_control_0" PORT="pwm_trigger"/>
+            <CONNECTION INSTANCE="motor_0" PORT="pwm_trigger"/>
+            <CONNECTION INSTANCE="motor_1" PORT="pwm_trigger"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/pwm_control_0" HWVERSION="1.0" INSTANCE="pwm_control_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pwm_control" VLNV="xilinx.com:module_ref:pwm_control:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/delay_1" HWVERSION="1.0" INSTANCE="delay_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="delay" VLNV="xilinx.com:module_ref:delay:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="ports" VALUE="1"/>
+        <PARAMETER NAME="clock" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_delay_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="signal_in" RIGHT="0" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dir_or_request_type" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="signal_out" RIGHT="0" SIGIS="undef" SIGNAME="delay_1_signal_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="enable_0" PORT="sig"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/delay_2" HWVERSION="1.0" INSTANCE="delay_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="delay" VLNV="xilinx.com:module_ref:delay:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="ports" VALUE="1"/>
+        <PARAMETER NAME="clock" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_delay_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="signal_in" RIGHT="0" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dir_or_request_type" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="signal_out" RIGHT="0" SIGIS="undef" SIGNAME="delay_2_signal_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="enable_1" PORT="sig"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/dir_or_request_type" HWVERSION="1.0" INSTANCE="dir_or_request_type" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="13"/>
+        <PARAMETER NAME="DIN_TO" VALUE="13"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_2"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="delay_2" PORT="signal_in"/>
+            <CONNECTION INSTANCE="delay_1" PORT="signal_in"/>
+            <CONNECTION INSTANCE="basys3_led" PORT="In5"/>
+            <CONNECTION INSTANCE="state_machine_0" PORT="request_type"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/enable_0" HWVERSION="1.0" INSTANCE="enable_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="enable" VLNV="xilinx.com:module_ref:enable:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_enable_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sig" SIGIS="undef" SIGNAME="delay_1_signal_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="delay_1" PORT="signal_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_A">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_A"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ou" SIGIS="undef" SIGNAME="enable_0_ou">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="motor_controler_0" PORT="dir"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/enable_1" HWVERSION="1.0" INSTANCE="enable_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="enable" VLNV="xilinx.com:module_ref:enable:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_enable_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sig" SIGIS="undef" SIGNAME="delay_2_signal_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="delay_2" PORT="signal_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_B"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ou" SIGIS="undef" SIGNAME="enable_1_ou">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="motor_controler_1" PORT="dir"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/frame_type" HWVERSION="1.0" INSTANCE="frame_type" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="15"/>
+        <PARAMETER NAME="DIN_TO" VALUE="15"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="frame_type_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="basys3_led" PORT="In7"/>
+            <CONNECTION INSTANCE="state_machine_0" PORT="frame_choice"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/index_0" HWVERSION="1.0" INSTANCE="index_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="0"/>
+        <PARAMETER NAME="DIN_TO" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_JB6_1"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="JB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="index_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="state_machine_0" PORT="index_ctrl_A"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/index_1" HWVERSION="1.0" INSTANCE="index_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="4"/>
+        <PARAMETER NAME="DIN_TO" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_JB6_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="JB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="index_1_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="state_machine_0" PORT="index_ctrl_B"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/motor_0" HWVERSION="1.0" INSTANCE="motor_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pwm_control" VLNV="xilinx.com:module_ref:pwm_control:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_pwm_control_0_0"/>
@@ -337,9 +589,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="pwm_trigger" RIGHT="0" SIGIS="undef" SIGNAME="delay_0_output">
+        <PORT DIR="I" LEFT="8" NAME="pwm_trigger" RIGHT="0" SIGIS="undef" SIGNAME="delay_0_signal_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="delay_0" PORT="output"/>
+            <CONNECTION INSTANCE="delay_0" PORT="signal_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_A">
@@ -347,15 +599,20 @@
             <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_A"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="pwm_signal" SIGIS="undef" SIGNAME="pwm_control_0_pwm_signal">
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_btnC">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="basys3_led" PORT="In0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="btnC"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pwm_signal" SIGIS="undef" SIGNAME="motor_0_pwm_signal">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="motor_controler_0" PORT="pwm"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/pwm_control_1" HWVERSION="1.0" INSTANCE="pwm_control_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pwm_control" VLNV="xilinx.com:module_ref:pwm_control:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/motor_1" HWVERSION="1.0" INSTANCE="motor_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pwm_control" VLNV="xilinx.com:module_ref:pwm_control:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_pwm_control_0_1"/>
@@ -367,9 +624,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="pwm_trigger" RIGHT="0" SIGIS="undef" SIGNAME="delay_0_output">
+        <PORT DIR="I" LEFT="8" NAME="pwm_trigger" RIGHT="0" SIGIS="undef" SIGNAME="delay_0_signal_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="delay_0" PORT="output"/>
+            <CONNECTION INSTANCE="delay_0" PORT="signal_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_B">
@@ -377,15 +634,155 @@
             <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_B"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="pwm_signal" SIGIS="undef" SIGNAME="pwm_control_1_pwm_signal">
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_btnC">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="basys3_led" PORT="In1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="btnC"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="pwm_signal" SIGIS="undef" SIGNAME="motor_1_pwm_signal">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="motor_controler_1" PORT="pwm"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/quadratur_decoder_0" HWVERSION="1.0" INSTANCE="quadratur_decoder_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="quadratur_decoder" VLNV="xilinx.com:module_ref:quadratur_decoder:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/motor_controler_0" HWVERSION="1.0" INSTANCE="motor_controler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="motor_controler" VLNV="xilinx.com:module_ref:motor_controler:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_motor_controler_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="pwm" SIGIS="undef" SIGNAME="motor_0_pwm_signal">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="motor_0" PORT="pwm_signal"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dir" SIGIS="undef" SIGNAME="enable_0_ou">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="enable_0" PORT="ou"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="outA" SIGIS="undef" SIGNAME="motor_controler_0_outA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_3" PORT="In0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="outB" SIGIS="undef" SIGNAME="motor_controler_0_outB">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_3" PORT="In1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/motor_controler_1" HWVERSION="1.0" INSTANCE="motor_controler_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="motor_controler" VLNV="xilinx.com:module_ref:motor_controler:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_motor_controler_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="pwm" SIGIS="undef" SIGNAME="motor_1_pwm_signal">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="motor_1" PORT="pwm_signal"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dir" SIGIS="undef" SIGNAME="enable_1_ou">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="enable_1" PORT="ou"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="outA" SIGIS="undef" SIGNAME="motor_controler_1_outA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_3" PORT="In4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="outB" SIGIS="undef" SIGNAME="motor_controler_1_outB">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_3" PORT="In5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/parity_calc" HWVERSION="1.0" INSTANCE="parity_calc" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Evenparity" VLNV="xilinx.com:module_ref:Evenparity:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_parity_check_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="state_machine_0" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="parity" SIGIS="undef" SIGNAME="parity_calc_parity">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_2" PORT="In0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/parity_check" HWVERSION="1.0" INSTANCE="parity_check" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Evenparity" VLNV="xilinx.com:module_ref:Evenparity:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Evenparity_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="parity" SIGIS="undef" SIGNAME="parity_check_parity">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="state_machine_0" PORT="parity_check"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/pwm_data" HWVERSION="1.0" INSTANCE="pwm_data" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="12"/>
+        <PARAMETER NAME="DIN_TO" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_2_0"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="9"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="8" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="pwm_data_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="delay_0" PORT="signal_in"/>
+            <CONNECTION INSTANCE="basys3_led" PORT="In4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/quadratur_motor_0" HWVERSION="1.0" INSTANCE="quadratur_motor_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="quadratur_decoder" VLNV="xilinx.com:module_ref:quadratur_decoder:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_quadratur_decoder_0_4"/>
@@ -407,7 +804,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="btnC"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="14" NAME="value" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_decoder_0_value">
+        <PORT DIR="O" LEFT="14" NAME="value" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_0_value">
           <CONNECTIONS>
             <CONNECTION INSTANCE="state_machine_0" PORT="quad_enc_A"/>
           </CONNECTIONS>
@@ -415,7 +812,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/quadratur_decoder_1" HWVERSION="1.0" INSTANCE="quadratur_decoder_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="quadratur_decoder" VLNV="xilinx.com:module_ref:quadratur_decoder:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/quadratur_motor_1" HWVERSION="1.0" INSTANCE="quadratur_motor_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="quadratur_decoder" VLNV="xilinx.com:module_ref:quadratur_decoder:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_quadratur_decoder_0_5"/>
@@ -437,7 +834,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="btnC"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="14" NAME="value" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_decoder_1_value">
+        <PORT DIR="O" LEFT="14" NAME="value" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_1_value">
           <CONNECTIONS>
             <CONNECTION INSTANCE="state_machine_0" PORT="quad_enc_B"/>
           </CONNECTIONS>
@@ -457,55 +854,62 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="frame_choice" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="I" NAME="frame_choice" SIGIS="undef" SIGNAME="frame_type_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+            <CONNECTION INSTANCE="frame_type" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="motor_choice" SIGIS="undef" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="I" NAME="motor_choice" SIGIS="undef" SIGNAME="Motor_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
+            <CONNECTION INSTANCE="Motor" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="request_type" SIGIS="undef" SIGNAME="xlslice_2_Dout">
+        <PORT DIR="I" NAME="request_type" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_2" PORT="Dout"/>
+            <CONNECTION INSTANCE="dir_or_request_type" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="parity_check" SIGIS="undef" SIGNAME="parity_check_parity">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="parity_check" PORT="parity"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="motor_ctrl_A" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_A">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="pwm_control_0" PORT="enable"/>
+            <CONNECTION INSTANCE="enable_0" PORT="en"/>
+            <CONNECTION INSTANCE="motor_0" PORT="enable"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="motor_ctrl_B" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_B">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="pwm_control_1" PORT="enable"/>
+            <CONNECTION INSTANCE="enable_1" PORT="en"/>
+            <CONNECTION INSTANCE="motor_1" PORT="enable"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="14" NAME="quad_enc_A" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_decoder_0_value">
+        <PORT DIR="I" LEFT="14" NAME="quad_enc_A" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_0_value">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="quadratur_decoder_0" PORT="value"/>
+            <CONNECTION INSTANCE="quadratur_motor_0" PORT="value"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="14" NAME="quad_enc_B" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_decoder_1_value">
+        <PORT DIR="I" LEFT="14" NAME="quad_enc_B" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_1_value">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="quadratur_decoder_1" PORT="value"/>
+            <CONNECTION INSTANCE="quadratur_motor_1" PORT="value"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="index_ctrl_A" SIGIS="undef" SIGNAME="External_Ports_btnU">
+        <PORT DIR="I" NAME="index_ctrl_A" SIGIS="undef" SIGNAME="index_0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="btnU"/>
+            <CONNECTION INSTANCE="index_0" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="index_ctrl_B" SIGIS="undef" SIGNAME="External_Ports_btnD">
+        <PORT DIR="I" NAME="index_ctrl_B" SIGIS="undef" SIGNAME="index_1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="btnD"/>
+            <CONNECTION INSTANCE="index_1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="14" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="led"/>
-            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_out"/>
+            <CONNECTION INSTANCE="parity_calc" PORT="data"/>
+            <CONNECTION INSTANCE="xlconcat_2" PORT="In1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -552,19 +956,19 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="JB0_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="JB0" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="JB1_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="JB1_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="JB1" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="JB2_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="JB2" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="1" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="quadratur_decoder_0" PORT="encoder"/>
+            <CONNECTION INSTANCE="quadratur_motor_0" PORT="encoder"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -611,114 +1015,159 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="JC0_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="JB5_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="JC0" PORT="Dout"/>
+            <CONNECTION INSTANCE="JB5" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="JC1_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="JB6_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="JC1" PORT="Dout"/>
+            <CONNECTION INSTANCE="JB6" PORT="Dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="1" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_1_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="quadratur_decoder_1" PORT="encoder"/>
+            <CONNECTION INSTANCE="quadratur_motor_1" PORT="encoder"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/xlslice_0" HWVERSION="1.0" INSTANCE="xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/xlconcat_2" HWVERSION="2.1" INSTANCE="xlconcat_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="15"/>
-        <PARAMETER NAME="DIN_TO" VALUE="15"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="15"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="16"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconcat_2_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="parity_calc_parity">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="basys3_led" PORT="In4"/>
-            <CONNECTION INSTANCE="state_machine_0" PORT="frame_choice"/>
+            <CONNECTION INSTANCE="parity_calc" PORT="parity"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="14" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="state_machine_0" PORT="data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_out"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/xlslice_1" HWVERSION="1.0" INSTANCE="xlslice_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/xlconcat_3" HWVERSION="2.1" INSTANCE="xlconcat_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="14"/>
-        <PARAMETER NAME="DIN_TO" VALUE="14"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_1"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN1_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="dout_width" VALUE="8"/>
+        <PARAMETER NAME="NUM_PORTS" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconcat_3_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_0_outA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+            <CONNECTION INSTANCE="motor_controler_0" PORT="outA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_0_outB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="basys3_led" PORT="In3"/>
-            <CONNECTION INSTANCE="state_machine_0" PORT="motor_choice"/>
+            <CONNECTION INSTANCE="motor_controler_0" PORT="outB"/>
           </CONNECTIONS>
         </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/xlslice_2" HWVERSION="1.0" INSTANCE="xlslice_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="13"/>
-        <PARAMETER NAME="DIN_TO" VALUE="13"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_2"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="constant_1_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+            <CONNECTION INSTANCE="constant_1" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_2_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_1_outA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="basys3_led" PORT="In2"/>
-            <CONNECTION INSTANCE="state_machine_0" PORT="request_type"/>
+            <CONNECTION INSTANCE="motor_controler_1" PORT="outA"/>
           </CONNECTIONS>
         </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/xlslice_3" HWVERSION="1.0" INSTANCE="xlslice_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="12"/>
-        <PARAMETER NAME="DIN_TO" VALUE="4"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_2_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="9"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="Din" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_1_outB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
+            <CONNECTION INSTANCE="motor_controler_1" PORT="outB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="8" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_3_Dout">
+        <PORT DIR="I" LEFT="0" NAME="In6" RIGHT="0" SIGIS="undef" SIGNAME="constant_1_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="delay_0" PORT="input"/>
+            <CONNECTION INSTANCE="constant_1" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="In7" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_3_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="JC"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

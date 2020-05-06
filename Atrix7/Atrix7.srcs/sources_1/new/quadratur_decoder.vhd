@@ -79,8 +79,11 @@ begin
                    end case;
                    
                    --looping at frame position
-                   if (32767 = position) then position <= to_unsigned(32399, 15);
-                   elsif (32400 <= position) then position <= (others =>  '0'); end if;
+                   if (32767 = position) then
+                       position <= to_unsigned(32399, 15);
+                   elsif (32400 <= position) then 
+                       position <= (others =>  '0'); 
+                   end if;
                    
                 end if;
                 preposition <= encoder;

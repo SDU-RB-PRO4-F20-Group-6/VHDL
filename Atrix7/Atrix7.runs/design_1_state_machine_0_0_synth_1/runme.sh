@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.runs/design_1_state_machine_0_0_synth_1'
+HD_PWD='C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.runs/design_1_state_machine_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

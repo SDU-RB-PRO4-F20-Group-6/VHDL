@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Fri Apr 17 00:15:01 2020
+-- Date        : Wed May  6 22:56:39 2020
 -- Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               C:/Users/claus/source/semesterprojekt/VHDL/claus_playground/claus_playground.srcs/sources_1/bd/design_1/ip/design_1_state_machine_0_0/design_1_state_machine_0_0_sim_netlist.vhdl
+--               C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_state_machine_0_0/design_1_state_machine_0_0_sim_netlist.vhdl
 -- Design      : design_1_state_machine_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,12 +19,14 @@ entity design_1_state_machine_0_0_state_machine is
     motor_ctrl_A : out STD_LOGIC;
     motor_ctrl_B : out STD_LOGIC;
     data_out : out STD_LOGIC_VECTOR ( 14 downto 0 );
-    D : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    frame_choice : in STD_LOGIC;
+    motor_choice : in STD_LOGIC;
     clk_in : in STD_LOGIC;
-    quad_enc_B : in STD_LOGIC_VECTOR ( 14 downto 0 );
-    quad_enc_A : in STD_LOGIC_VECTOR ( 14 downto 0 );
     index_ctrl_B : in STD_LOGIC;
-    index_ctrl_A : in STD_LOGIC
+    quad_enc_B : in STD_LOGIC_VECTOR ( 14 downto 0 );
+    index_ctrl_A : in STD_LOGIC;
+    request_type : in STD_LOGIC;
+    quad_enc_A : in STD_LOGIC_VECTOR ( 14 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of design_1_state_machine_0_0_state_machine : entity is "state_machine";
@@ -33,22 +35,23 @@ end design_1_state_machine_0_0_state_machine;
 architecture STRUCTURE of design_1_state_machine_0_0_state_machine is
   signal \data_out[14]_i_1_n_0\ : STD_LOGIC;
   signal data_out_0 : STD_LOGIC_VECTOR ( 14 downto 0 );
-  signal frame : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal motor_ctrl_A_i_1_n_0 : STD_LOGIC;
   signal motor_ctrl_B_i_1_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of motor_ctrl_A_i_1 : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of motor_ctrl_B_i_1 : label is "soft_lutpair0";
 begin
-\data_out[0]_i_1\: unisim.vcomponents.LUT4
+\data_out[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00B8"
+      INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => quad_enc_B(0),
-      I1 => frame(1),
-      I2 => quad_enc_A(0),
-      I3 => frame(0),
+      I0 => index_ctrl_B,
+      I1 => quad_enc_B(0),
+      I2 => motor_choice,
+      I3 => index_ctrl_A,
+      I4 => request_type,
+      I5 => quad_enc_A(0),
       O => data_out_0(0)
     );
 \data_out[10]_i_1\: unisim.vcomponents.LUT4
@@ -57,9 +60,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(10),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(10),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(10)
     );
 \data_out[11]_i_1\: unisim.vcomponents.LUT4
@@ -68,9 +71,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(11),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(11),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(11)
     );
 \data_out[12]_i_1\: unisim.vcomponents.LUT4
@@ -79,9 +82,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(12),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(12),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(12)
     );
 \data_out[13]_i_1\: unisim.vcomponents.LUT4
@@ -90,9 +93,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(13),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(13),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(13)
     );
 \data_out[14]_i_1\: unisim.vcomponents.LUT1
@@ -100,20 +103,18 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => frame(2),
+      I0 => frame_choice,
       O => \data_out[14]_i_1_n_0\
     );
-\data_out[14]_i_2\: unisim.vcomponents.LUT6
+\data_out[14]_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
+      INIT => X"00B8"
     )
         port map (
-      I0 => index_ctrl_B,
-      I1 => quad_enc_B(14),
-      I2 => frame(1),
-      I3 => index_ctrl_A,
-      I4 => frame(0),
-      I5 => quad_enc_A(14),
+      I0 => quad_enc_B(14),
+      I1 => motor_choice,
+      I2 => quad_enc_A(14),
+      I3 => request_type,
       O => data_out_0(14)
     );
 \data_out[1]_i_1\: unisim.vcomponents.LUT4
@@ -122,9 +123,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(1),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(1),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(1)
     );
 \data_out[2]_i_1\: unisim.vcomponents.LUT4
@@ -133,9 +134,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(2),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(2),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(2)
     );
 \data_out[3]_i_1\: unisim.vcomponents.LUT4
@@ -144,9 +145,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(3),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(3),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(3)
     );
 \data_out[4]_i_1\: unisim.vcomponents.LUT4
@@ -155,9 +156,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(4),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(4),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(4)
     );
 \data_out[5]_i_1\: unisim.vcomponents.LUT4
@@ -166,9 +167,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(5),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(5),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(5)
     );
 \data_out[6]_i_1\: unisim.vcomponents.LUT4
@@ -177,9 +178,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(6),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(6),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(6)
     );
 \data_out[7]_i_1\: unisim.vcomponents.LUT4
@@ -188,9 +189,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(7),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(7),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(7)
     );
 \data_out[8]_i_1\: unisim.vcomponents.LUT4
@@ -199,9 +200,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(8),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(8),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(8)
     );
 \data_out[9]_i_1\: unisim.vcomponents.LUT4
@@ -210,9 +211,9 @@ begin
     )
         port map (
       I0 => quad_enc_B(9),
-      I1 => frame(1),
+      I1 => motor_choice,
       I2 => quad_enc_A(9),
-      I3 => frame(0),
+      I3 => request_type,
       O => data_out_0(9)
     );
 \data_out_reg[0]\: unisim.vcomponents.FDRE
@@ -335,37 +336,13 @@ begin
       Q => data_out(9),
       R => '0'
     );
-\frame_reg[0]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => '1',
-      D => D(0),
-      Q => frame(0),
-      R => '0'
-    );
-\frame_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => '1',
-      D => D(1),
-      Q => frame(1),
-      R => '0'
-    );
-\frame_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => clk_in,
-      CE => '1',
-      D => D(2),
-      Q => frame(2),
-      R => '0'
-    );
 motor_ctrl_A_i_1: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
     )
         port map (
-      I0 => frame(2),
-      I1 => frame(1),
+      I0 => frame_choice,
+      I1 => motor_choice,
       O => motor_ctrl_A_i_1_n_0
     );
 motor_ctrl_A_reg: unisim.vcomponents.FDRE
@@ -381,8 +358,8 @@ motor_ctrl_B_i_1: unisim.vcomponents.LUT2
       INIT => X"8"
     )
         port map (
-      I0 => frame(1),
-      I1 => frame(2),
+      I0 => motor_choice,
+      I1 => frame_choice,
       O => motor_ctrl_B_i_1_n_0
     );
 motor_ctrl_B_reg: unisim.vcomponents.FDRE
@@ -404,6 +381,7 @@ entity design_1_state_machine_0_0 is
     frame_choice : in STD_LOGIC;
     motor_choice : in STD_LOGIC;
     request_type : in STD_LOGIC;
+    parity_check : in STD_LOGIC;
     motor_ctrl_A : out STD_LOGIC;
     motor_ctrl_B : out STD_LOGIC;
     quad_enc_A : in STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -428,16 +406,16 @@ architecture STRUCTURE of design_1_state_machine_0_0 is
 begin
 U0: entity work.design_1_state_machine_0_0_state_machine
      port map (
-      D(2) => frame_choice,
-      D(1) => motor_choice,
-      D(0) => request_type,
       clk_in => clk_in,
       data_out(14 downto 0) => data_out(14 downto 0),
+      frame_choice => frame_choice,
       index_ctrl_A => index_ctrl_A,
       index_ctrl_B => index_ctrl_B,
+      motor_choice => motor_choice,
       motor_ctrl_A => motor_ctrl_A,
       motor_ctrl_B => motor_ctrl_B,
       quad_enc_A(14 downto 0) => quad_enc_A(14 downto 0),
-      quad_enc_B(14 downto 0) => quad_enc_B(14 downto 0)
+      quad_enc_B(14 downto 0) => quad_enc_B(14 downto 0),
+      request_type => request_type
     );
 end STRUCTURE;
