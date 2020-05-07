@@ -58,7 +58,7 @@ begin
         data(5) after 650 ns, data(4) after 710 ns, data(3) after 770 ns, data(2) after 830 ns, data(1) after 890 ns,
         data(0) after 950 ns, 'U' after 1010 ns;
         
-    spi_ss_n <= '0' after 50 ns, '1' after 1040 ns;
+    spi_ss_n <= '0' after 50 ns, 'U' after 1040 ns;
     
     spi_data_out <= ("0000111100001111");
     -- EDIT Add stimuli here
