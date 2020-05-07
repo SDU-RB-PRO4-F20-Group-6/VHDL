@@ -54,7 +54,7 @@ begin
     process(spi_sclk, spi_ss_n, clk_in)
     variable position: integer range 0 to 15 := 0;
     begin
-        if (falling_edge(clk_in) and spi_ss_n = '1') then
+        if (rising_edge(clk_in) and spi_ss_n /= '0') then
             position := 0;
             spi_data_in <= buf_in;
             buf_out <= spi_data_out;
