@@ -14,11 +14,11 @@ The project contains the folder "Atrix7" and "module description".
 ## Artix 7
 [This folder](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/tree/master/Atrix7) is the entire folder created by vivado 2019.2 when creating a project. To open the project in vivado, download [this](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/tree/master/Atrix7) folder and double click Atrix7.xpr.
 ## Module description
-[This folder](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/tree/master/module%20description) contains the documentation for all the modules, used in the vivado project more in depth.
+[This folder](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/tree/master/module%20description) contains the documentation for all the modules, used in the vivado project more in depth. The different test menches at the end of each document does not show the actual execution time
 ### Modules
 The spi module handles the communication between the FPGA and the MCU. Read more [here](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/blob/master/module%20description/spi.md)
 
 The state machine module handles the protocol used on top of spi to communicate with the MCU to either give the correct data back to the MCU or execute the correct command givven by the MCU. Read more [here](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/blob/master/module%20description/statemachine.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjg4MzE2ODRdfQ==
+eyJoaXN0b3J5IjpbLTE1NTA0MzIwMCwtMTM2ODgzMTY4NF19
 -->
