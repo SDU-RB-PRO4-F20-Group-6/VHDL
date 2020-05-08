@@ -1,9 +1,8 @@
 # Read me
 # Table of Contents
 1. [Introduction](#introduction)
-2. [Useage](#Useage)
-3. [Artix 7](#artix-7)
-4. [Module description](#module-description)
+2. [Artix 7](#artix-7)
+3. [Module description](#module-description)
 
 ## Introduction
 This project contains the everything related to the FPGA used by group 12 in the robotics civil engineering F20 semester.
@@ -20,6 +19,6 @@ This repository contains the folder "Atrix7" and "module description".
 [This folder](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/tree/master/module%20description) contains the documentation for all the modules, used in the vivado project more in depth. 
 The different test bench at the end of each document does not show the actual execution time but is only to show the functionality of each module.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwODM2ODYxNywtMTY2MzM0MjY1MywtOT
+eyJoaXN0b3J5IjpbLTg3NjU4MjA4MSwtMTY2MzM0MjY1MywtOT
 E2Nzc3NjcwLC0xMzY4ODMxNjg0XX0=
 -->
