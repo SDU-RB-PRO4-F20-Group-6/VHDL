@@ -5,7 +5,7 @@ The FPGA in the project function as the interface between the hardware and the M
 The project contains the folder "Atrix7" and "module description".
 
 # Table of Contents
-1. [Artix 7](#Atrix-7)
+1. [Artix 7](#artix-7)
 2. [Module description](#module-description)
 
 ## Artix 7
@@ -14,6 +14,6 @@ The project contains the folder "Atrix7" and "module description".
 [This folder](https://github.com/SDU-RB-PRO4-F20-Group-6/VHDL/tree/master/module%20description) contains the documentation for all the modules, used in the vivado project more in depth. 
 The different test bench at the end of each document does not show the actual execution time but is only to show the functionality of each module.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjMzNDI2NTMsLTkxNjc3NzY3MCwtMT
-M2ODgzMTY4NF19
+eyJoaXN0b3J5IjpbLTg4MjY3MTMsLTE2NjMzNDI2NTMsLTkxNj
+c3NzY3MCwtMTM2ODgzMTY4NF19
 -->
