@@ -7,10 +7,10 @@ This module is set up with the following polarity and phase:
 CPOL: 0
 CPHA: 0
 
-## test bench
+## Test bench
 ![Image from Gyazo](https://i.gyazo.com/e856f0cace5aabb92b863ec43b2b1aae.png)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIyNDQwMzgsLTM1Mjk5NDQ4NSw4MTAwMD
-UzNzVdfQ==
+eyJoaXN0b3J5IjpbMTEwMDQ3NzAzMCw1MjI0NDAzOCwtMzUyOT
+k0NDg1LDgxMDAwNTM3NV19
 -->
