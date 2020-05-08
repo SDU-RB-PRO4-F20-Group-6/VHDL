@@ -39,8 +39,8 @@ Request = 1, Hall index
 Request = 0, Position
  
 
-## Benchmark
+## Test bench
 ![benchmark](https://i.gyazo.com/33c2b5907761bfed78a1ddda94417587.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MDc2NDA5Nl19
+eyJoaXN0b3J5IjpbMjA4OTAzNjg5M119
 -->
