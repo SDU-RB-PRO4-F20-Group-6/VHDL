@@ -1,5 +1,6 @@
 # Statemachine
 ![statemachine module](https://i.gyazo.com/effd08d41240958dc5f1096c466e2ccb.png)
+
 The statemachine dictates whats happening in the FPGA based on the frame recieved from the spi module.
 Motor 0 is the same as motor A.
 On the input, there is data comming from quad_enc and index_ctrl.
