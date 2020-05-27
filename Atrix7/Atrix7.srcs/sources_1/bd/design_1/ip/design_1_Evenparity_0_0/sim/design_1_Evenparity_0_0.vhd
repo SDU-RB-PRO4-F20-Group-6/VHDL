@@ -55,7 +55,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY design_1_Evenparity_0_0 IS
   PORT (
-    data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    data : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
     parity : OUT STD_LOGIC
   );
 END design_1_Evenparity_0_0;
@@ -65,7 +65,7 @@ ARCHITECTURE design_1_Evenparity_0_0_arch OF design_1_Evenparity_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_Evenparity_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT Evenparity IS
     PORT (
-      data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      data : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
       parity : OUT STD_LOGIC
     );
   END COMPONENT Evenparity;

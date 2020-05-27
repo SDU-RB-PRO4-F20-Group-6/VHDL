@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May  6 22:55:07 2020" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 27 15:17:26 2020" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="design_1" PACKAGE="cpg236" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="delay_0" PORT="clk_in"/>
         <CONNECTION INSTANCE="SPI_0" PORT="clk_in"/>
-        <CONNECTION INSTANCE="delay_2" PORT="clk_in"/>
-        <CONNECTION INSTANCE="delay_1" PORT="clk_in"/>
         <CONNECTION INSTANCE="enable_0" PORT="clk"/>
-        <CONNECTION INSTANCE="enable_1" PORT="clk"/>
-        <CONNECTION INSTANCE="quadratur_motor_0" PORT="clk_in"/>
-        <CONNECTION INSTANCE="quadratur_motor_1" PORT="clk_in"/>
-        <CONNECTION INSTANCE="motor_controler_0" PORT="clk"/>
-        <CONNECTION INSTANCE="motor_controler_1" PORT="clk"/>
+        <CONNECTION INSTANCE="delay_1" PORT="clk_in"/>
         <CONNECTION INSTANCE="motor_0" PORT="clk_in"/>
         <CONNECTION INSTANCE="motor_1" PORT="clk_in"/>
-        <CONNECTION INSTANCE="state_machine_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="delay_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="enable_1" PORT="clk"/>
+        <CONNECTION INSTANCE="delay_2" PORT="clk_in"/>
+        <CONNECTION INSTANCE="quadratur_motor_1" PORT="clk_in"/>
+        <CONNECTION INSTANCE="quadratur_motor_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="data_flow_manager_0" PORT="clk_in"/>
+        <CONNECTION INSTANCE="motor_controller_1" PORT="clk"/>
+        <CONNECTION INSTANCE="motor_controller_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="sclk" SIGIS="undef" SIGNAME="External_Ports_sclk">
@@ -36,9 +36,9 @@
         <CONNECTION INSTANCE="SPI_0" PORT="spi_ss_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="15" NAME="led" RIGHT="0" SIGIS="undef" SIGNAME="basys3_led_dout">
+    <PORT DIR="O" LEFT="15" NAME="led" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="basys3_led" PORT="dout"/>
+        <CONNECTION INSTANCE="xlconcat_2" PORT="dout"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="miso" SIGIS="undef" SIGNAME="SPI_0_spi_miso">
@@ -48,10 +48,10 @@
     </PORT>
     <PORT DIR="I" NAME="btnC" SIGIS="rst" SIGNAME="External_Ports_btnC">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="quadratur_motor_0" PORT="reset"/>
-        <CONNECTION INSTANCE="quadratur_motor_1" PORT="reset"/>
         <CONNECTION INSTANCE="motor_0" PORT="reset"/>
         <CONNECTION INSTANCE="motor_1" PORT="reset"/>
+        <CONNECTION INSTANCE="quadratur_motor_0" PORT="reset"/>
+        <CONNECTION INSTANCE="quadratur_motor_1" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="7" NAME="JB" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_JB">
@@ -188,8 +188,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="Motor_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="basys3_led" PORT="In6"/>
-            <CONNECTION INSTANCE="state_machine_0" PORT="motor_choice"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="motor_choice"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -229,89 +228,16 @@
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="spi_data_in" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="frame_type" PORT="Din"/>
-            <CONNECTION INSTANCE="Motor" PORT="Din"/>
-            <CONNECTION INSTANCE="dir_or_request_type" PORT="Din"/>
-            <CONNECTION INSTANCE="parity_check" PORT="data"/>
             <CONNECTION INSTANCE="pwm_data" PORT="Din"/>
+            <CONNECTION INSTANCE="dir_or_request_type" PORT="Din"/>
+            <CONNECTION INSTANCE="frame_type" PORT="Din"/>
+            <CONNECTION INSTANCE="parity_check" PORT="data"/>
+            <CONNECTION INSTANCE="Motor" PORT="Din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="15" NAME="spi_data_out" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_2" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/basys3_led" HWVERSION="2.1" INSTANCE="basys3_led" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN1_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN4_WIDTH" VALUE="9"/>
-        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="dout_width" VALUE="16"/>
-        <PARAMETER NAME="NUM_PORTS" VALUE="8"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconcat_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="8" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="pwm_data_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="pwm_data" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dir_or_request_type" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In6" RIGHT="0" SIGIS="undef" SIGNAME="Motor_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="Motor" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In7" RIGHT="0" SIGIS="undef" SIGNAME="frame_type_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="frame_type" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="basys3_led_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="led"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -330,6 +256,79 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_3" PORT="In2"/>
             <CONNECTION INSTANCE="xlconcat_3" PORT="In6"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/data_flow_manager_0" HWVERSION="1.0" INSTANCE="data_flow_manager_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="data_flow_manager" VLNV="xilinx.com:module_ref:data_flow_manager:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_data_flow_manager_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="frame_choice" SIGIS="undef" SIGNAME="frame_type_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="frame_type" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="motor_choice" SIGIS="undef" SIGNAME="Motor_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Motor" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="request_type" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dir_or_request_type" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="parity_check" SIGIS="undef" SIGNAME="parity_check_parity">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="parity_check" PORT="parity"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="motor_ctrl_A" SIGIS="undef" SIGNAME="data_flow_manager_0_motor_ctrl_A">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="enable_0" PORT="en"/>
+            <CONNECTION INSTANCE="motor_0" PORT="enable"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="motor_ctrl_B" SIGIS="undef" SIGNAME="data_flow_manager_0_motor_ctrl_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="enable_1" PORT="en"/>
+            <CONNECTION INSTANCE="motor_1" PORT="enable"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="14" NAME="quad_enc_A" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_0_value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="quadratur_motor_0" PORT="value"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="14" NAME="quad_enc_B" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_1_value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="quadratur_motor_1" PORT="value"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="index_ctrl_A" SIGIS="undef" SIGNAME="index_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="index_0" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="index_ctrl_B" SIGIS="undef" SIGNAME="index_1_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="index_1" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="14" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="data_flow_manager_0_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconcat_2" PORT="In1"/>
+            <CONNECTION INSTANCE="parity_calc" PORT="data"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -437,8 +436,7 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="delay_2" PORT="signal_in"/>
             <CONNECTION INSTANCE="delay_1" PORT="signal_in"/>
-            <CONNECTION INSTANCE="basys3_led" PORT="In5"/>
-            <CONNECTION INSTANCE="state_machine_0" PORT="request_type"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="request_type"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -461,14 +459,14 @@
             <CONNECTION INSTANCE="delay_1" PORT="signal_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_A">
+        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="data_flow_manager_0_motor_ctrl_A">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_A"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="motor_ctrl_A"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ou" SIGIS="undef" SIGNAME="enable_0_ou">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_0" PORT="dir"/>
+            <CONNECTION INSTANCE="motor_controller_0" PORT="dir"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -491,14 +489,14 @@
             <CONNECTION INSTANCE="delay_2" PORT="signal_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_B">
+        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="data_flow_manager_0_motor_ctrl_B">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_B"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="motor_ctrl_B"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ou" SIGIS="undef" SIGNAME="enable_1_ou">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_1" PORT="dir"/>
+            <CONNECTION INSTANCE="motor_controller_1" PORT="dir"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -522,8 +520,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="frame_type_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="basys3_led" PORT="In7"/>
-            <CONNECTION INSTANCE="state_machine_0" PORT="frame_choice"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="frame_choice"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -547,7 +544,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="index_0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="index_ctrl_A"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="index_ctrl_A"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -571,7 +568,7 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="index_1_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="index_ctrl_B"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="index_ctrl_B"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -594,9 +591,9 @@
             <CONNECTION INSTANCE="delay_0" PORT="signal_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_A">
+        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="data_flow_manager_0_motor_ctrl_A">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_A"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="motor_ctrl_A"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_btnC">
@@ -606,7 +603,7 @@
         </PORT>
         <PORT DIR="O" NAME="pwm_signal" SIGIS="undef" SIGNAME="motor_0_pwm_signal">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_0" PORT="pwm"/>
+            <CONNECTION INSTANCE="motor_controller_0" PORT="pwm"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -629,9 +626,9 @@
             <CONNECTION INSTANCE="delay_0" PORT="signal_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_B">
+        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="data_flow_manager_0_motor_ctrl_B">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="motor_ctrl_B"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="motor_ctrl_B"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_btnC">
@@ -641,13 +638,13 @@
         </PORT>
         <PORT DIR="O" NAME="pwm_signal" SIGIS="undef" SIGNAME="motor_1_pwm_signal">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_1" PORT="pwm"/>
+            <CONNECTION INSTANCE="motor_controller_1" PORT="pwm"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/motor_controler_0" HWVERSION="1.0" INSTANCE="motor_controler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="motor_controler" VLNV="xilinx.com:module_ref:motor_controler:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/motor_controller_0" HWVERSION="1.0" INSTANCE="motor_controller_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="motor_controler" VLNV="xilinx.com:module_ref:motor_controler:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_motor_controler_0_0"/>
@@ -669,12 +666,12 @@
             <CONNECTION INSTANCE="enable_0" PORT="ou"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outA" SIGIS="undef" SIGNAME="motor_controler_0_outA">
+        <PORT DIR="O" NAME="outA" SIGIS="undef" SIGNAME="motor_controller_0_outA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_3" PORT="In0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outB" SIGIS="undef" SIGNAME="motor_controler_0_outB">
+        <PORT DIR="O" NAME="outB" SIGIS="undef" SIGNAME="motor_controller_0_outB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_3" PORT="In1"/>
           </CONNECTIONS>
@@ -682,7 +679,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/motor_controler_1" HWVERSION="1.0" INSTANCE="motor_controler_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="motor_controler" VLNV="xilinx.com:module_ref:motor_controler:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/motor_controller_1" HWVERSION="1.0" INSTANCE="motor_controller_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="motor_controler" VLNV="xilinx.com:module_ref:motor_controler:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="design_1_motor_controler_0_1"/>
@@ -704,12 +701,12 @@
             <CONNECTION INSTANCE="enable_1" PORT="ou"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outA" SIGIS="undef" SIGNAME="motor_controler_1_outA">
+        <PORT DIR="O" NAME="outA" SIGIS="undef" SIGNAME="motor_controller_1_outA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_3" PORT="In4"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="outB" SIGIS="undef" SIGNAME="motor_controler_1_outB">
+        <PORT DIR="O" NAME="outB" SIGIS="undef" SIGNAME="motor_controller_1_outB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconcat_3" PORT="In5"/>
           </CONNECTIONS>
@@ -724,9 +721,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
+        <PORT DIR="I" LEFT="14" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="data_flow_manager_0_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="data_out"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="data_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="parity" SIGIS="undef" SIGNAME="parity_calc_parity">
@@ -744,14 +741,14 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
+        <PORT DIR="I" LEFT="14" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="SPI_0_spi_data_in">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SPI_0" PORT="spi_data_in"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="parity" SIGIS="undef" SIGNAME="parity_check_parity">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="parity_check"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="parity_check"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -776,7 +773,6 @@
         <PORT DIR="O" LEFT="8" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="pwm_data_Dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="delay_0" PORT="signal_in"/>
-            <CONNECTION INSTANCE="basys3_led" PORT="In4"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -806,7 +802,7 @@
         </PORT>
         <PORT DIR="O" LEFT="14" NAME="value" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_0_value">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="quad_enc_A"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="quad_enc_A"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -836,80 +832,7 @@
         </PORT>
         <PORT DIR="O" LEFT="14" NAME="value" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_1_value">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="quad_enc_B"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/state_machine_0" HWVERSION="1.0" INSTANCE="state_machine_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="state_machine" VLNV="xilinx.com:module_ref:state_machine:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_state_machine_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="clk_in" SIGIS="undef" SIGNAME="External_Ports_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="frame_choice" SIGIS="undef" SIGNAME="frame_type_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="frame_type" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="motor_choice" SIGIS="undef" SIGNAME="Motor_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="Motor" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="request_type" SIGIS="undef" SIGNAME="dir_or_request_type_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dir_or_request_type" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="parity_check" SIGIS="undef" SIGNAME="parity_check_parity">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="parity_check" PORT="parity"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="motor_ctrl_A" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_A">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="enable_0" PORT="en"/>
-            <CONNECTION INSTANCE="motor_0" PORT="enable"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="motor_ctrl_B" SIGIS="undef" SIGNAME="state_machine_0_motor_ctrl_B">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="enable_1" PORT="en"/>
-            <CONNECTION INSTANCE="motor_1" PORT="enable"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="14" NAME="quad_enc_A" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_0_value">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="quadratur_motor_0" PORT="value"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="14" NAME="quad_enc_B" RIGHT="0" SIGIS="undef" SIGNAME="quadratur_motor_1_value">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="quadratur_motor_1" PORT="value"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="index_ctrl_A" SIGIS="undef" SIGNAME="index_0_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="index_0" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="index_ctrl_B" SIGIS="undef" SIGNAME="index_1_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="index_1" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="14" NAME="data_out" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="parity_calc" PORT="data"/>
-            <CONNECTION INSTANCE="xlconcat_2" PORT="In1"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="quad_enc_B"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1079,14 +1002,15 @@
             <CONNECTION INSTANCE="parity_calc" PORT="parity"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="14" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="state_machine_0_data_out">
+        <PORT DIR="I" LEFT="14" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="data_flow_manager_0_data_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="state_machine_0" PORT="data_out"/>
+            <CONNECTION INSTANCE="data_flow_manager_0" PORT="data_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_2_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="SPI_0" PORT="spi_data_out"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="led"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1133,14 +1057,14 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_0_outA">
+        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="motor_controller_0_outA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_0" PORT="outA"/>
+            <CONNECTION INSTANCE="motor_controller_0" PORT="outA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_0_outB">
+        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="motor_controller_0_outB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_0" PORT="outB"/>
+            <CONNECTION INSTANCE="motor_controller_0" PORT="outB"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="constant_1_dout">
@@ -1149,14 +1073,14 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_1_outA">
+        <PORT DIR="I" LEFT="0" NAME="In4" RIGHT="0" SIGIS="undef" SIGNAME="motor_controller_1_outA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_1" PORT="outA"/>
+            <CONNECTION INSTANCE="motor_controller_1" PORT="outA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef" SIGNAME="motor_controler_1_outB">
+        <PORT DIR="I" LEFT="0" NAME="In5" RIGHT="0" SIGIS="undef" SIGNAME="motor_controller_1_outB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="motor_controler_1" PORT="outB"/>
+            <CONNECTION INSTANCE="motor_controller_1" PORT="outB"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="In6" RIGHT="0" SIGIS="undef" SIGNAME="constant_1_dout">

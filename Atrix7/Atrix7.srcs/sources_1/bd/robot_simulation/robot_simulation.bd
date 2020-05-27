@@ -1,0 +1,543 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF50BFB8237380FB7",
+      "device": "xc7a35tcpg236-1",
+      "name": "robot_simulation",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "SPI_0": "",
+      "quadratur_decoder_0": "",
+      "state_machine_0": "",
+      "quadratur_decoder_1": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "xlslice_2": "",
+      "Evenparity_0": "",
+      "xlconcat_0": "",
+      "xlslice_3": "",
+      "xlslice_4": "",
+      "xlslice_5": "",
+      "xlslice_6": "",
+      "xlconcat_1": "",
+      "xlconcat_2": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "sclk": {
+        "direction": "I"
+      },
+      "mosi": {
+        "direction": "I"
+      },
+      "ss": {
+        "direction": "I"
+      },
+      "miso": {
+        "direction": "O"
+      },
+      "btnU": {
+        "direction": "I"
+      },
+      "btnD": {
+        "direction": "I"
+      },
+      "JB": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "JC": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "led": {
+        "direction": "O",
+        "left": "15",
+        "right": "0",
+        "parameters": {
+          "PortWidth": {
+            "value": "16",
+            "value_src": "ip_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "SPI_0": {
+        "vlnv": "xilinx.com:module_ref:SPI:1.0",
+        "xci_name": "robot_simulation_SPI_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SPI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "spi_sclk": {
+            "direction": "I"
+          },
+          "spi_mosi": {
+            "direction": "I"
+          },
+          "spi_ss_n": {
+            "direction": "I"
+          },
+          "spi_miso": {
+            "direction": "O"
+          },
+          "spi_data_in": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "spi_data_out": {
+            "direction": "I",
+            "left": "15",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "16",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
+      "quadratur_decoder_0": {
+        "vlnv": "xilinx.com:module_ref:quadratur_decoder:1.0",
+        "xci_name": "robot_simulation_quadratur_decoder_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "quadratur_decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "encoder": {
+            "direction": "I",
+            "left": "1",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "2",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "value": {
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          }
+        }
+      },
+      "state_machine_0": {
+        "vlnv": "xilinx.com:module_ref:state_machine:1.0",
+        "xci_name": "robot_simulation_state_machine_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "state_machine",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "frame_choice": {
+            "direction": "I"
+          },
+          "motor_choice": {
+            "direction": "I"
+          },
+          "request_type": {
+            "direction": "I"
+          },
+          "parity_check": {
+            "direction": "I"
+          },
+          "motor_ctrl_A": {
+            "direction": "O"
+          },
+          "motor_ctrl_B": {
+            "direction": "O"
+          },
+          "quad_enc_A": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "quad_enc_B": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "index_ctrl_A": {
+            "direction": "I"
+          },
+          "index_ctrl_B": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          }
+        }
+      },
+      "quadratur_decoder_1": {
+        "vlnv": "xilinx.com:module_ref:quadratur_decoder:1.0",
+        "xci_name": "robot_simulation_quadratur_decoder_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "quadratur_decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "encoder": {
+            "direction": "I",
+            "left": "1",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "2",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "value": {
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "robot_simulation_xlslice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "15"
+          },
+          "DIN_TO": {
+            "value": "15"
+          },
+          "DIN_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "robot_simulation_xlslice_0_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "14"
+          },
+          "DIN_TO": {
+            "value": "14"
+          },
+          "DIN_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "xlslice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "robot_simulation_xlslice_0_2",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "13"
+          },
+          "DIN_TO": {
+            "value": "13"
+          },
+          "DIN_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "Evenparity_0": {
+        "vlnv": "xilinx.com:module_ref:Evenparity:1.0",
+        "xci_name": "robot_simulation_Evenparity_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Evenparity",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "parity": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "robot_simulation_xlconcat_0_0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "1"
+          },
+          "IN1_WIDTH": {
+            "value": "15"
+          }
+        }
+      },
+      "xlslice_3": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "robot_simulation_xlslice_2_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "xlslice_4": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "robot_simulation_xlslice_3_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "8"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_5": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "robot_simulation_xlslice_3_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "8"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "xlslice_6": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "robot_simulation_xlslice_3_2",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "xlconcat_1": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "robot_simulation_xlconcat_1_0"
+      },
+      "xlconcat_2": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "robot_simulation_xlconcat_1_1"
+      }
+    },
+    "nets": {
+      "clk_in_0_1": {
+        "ports": [
+          "clk",
+          "state_machine_0/clk_in",
+          "quadratur_decoder_1/clk_in",
+          "quadratur_decoder_0/clk_in",
+          "SPI_0/clk_in"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "state_machine_0/frame_choice"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "state_machine_0/motor_choice"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_2/Dout",
+          "state_machine_0/request_type"
+        ]
+      },
+      "SPI_0_spi_data_in": {
+        "ports": [
+          "SPI_0/spi_data_in",
+          "xlslice_0/Din",
+          "xlslice_1/Din",
+          "xlslice_2/Din"
+        ]
+      },
+      "quadratur_decoder_1_value": {
+        "ports": [
+          "quadratur_decoder_1/value",
+          "state_machine_0/quad_enc_B"
+        ]
+      },
+      "quadratur_decoder_0_value": {
+        "ports": [
+          "quadratur_decoder_0/value",
+          "state_machine_0/quad_enc_A"
+        ]
+      },
+      "spi_sclk_0_1": {
+        "ports": [
+          "sclk",
+          "SPI_0/spi_sclk"
+        ]
+      },
+      "spi_mosi_0_1": {
+        "ports": [
+          "mosi",
+          "SPI_0/spi_mosi"
+        ]
+      },
+      "spi_ss_n_0_1": {
+        "ports": [
+          "ss",
+          "SPI_0/spi_ss_n"
+        ]
+      },
+      "SPI_0_spi_miso": {
+        "ports": [
+          "SPI_0/spi_miso",
+          "miso"
+        ]
+      },
+      "index_ctrl_A_0_1": {
+        "ports": [
+          "btnU",
+          "state_machine_0/index_ctrl_A"
+        ]
+      },
+      "index_ctrl_B_0_1": {
+        "ports": [
+          "btnD",
+          "state_machine_0/index_ctrl_B"
+        ]
+      },
+      "Din_0_1": {
+        "ports": [
+          "JB",
+          "xlslice_6/Din",
+          "xlslice_5/Din"
+        ]
+      },
+      "Din_0_2": {
+        "ports": [
+          "JC",
+          "xlslice_3/Din",
+          "xlslice_4/Din"
+        ]
+      },
+      "xlslice_5_Dout": {
+        "ports": [
+          "xlslice_5/Dout",
+          "xlconcat_1/In0"
+        ]
+      },
+      "xlslice_6_Dout": {
+        "ports": [
+          "xlslice_6/Dout",
+          "xlconcat_1/In1"
+        ]
+      },
+      "xlconcat_1_dout": {
+        "ports": [
+          "xlconcat_1/dout",
+          "quadratur_decoder_0/encoder"
+        ]
+      },
+      "xlslice_3_Dout": {
+        "ports": [
+          "xlslice_3/Dout",
+          "xlconcat_2/In0"
+        ]
+      },
+      "xlslice_4_Dout": {
+        "ports": [
+          "xlslice_4/Dout",
+          "xlconcat_2/In1"
+        ]
+      },
+      "xlconcat_2_dout": {
+        "ports": [
+          "xlconcat_2/dout",
+          "quadratur_decoder_1/encoder"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "led",
+          "SPI_0/spi_data_out"
+        ]
+      },
+      "Evenparity_0_parity": {
+        "ports": [
+          "Evenparity_0/parity",
+          "xlconcat_0/In0"
+        ]
+      },
+      "state_machine_0_data_out": {
+        "ports": [
+          "state_machine_0/data_out",
+          "Evenparity_0/data",
+          "xlconcat_0/In1"
+        ]
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Mon Apr 27 23:46:50 2020
+-- Date        : Sat May  9 09:59:22 2020
 -- Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_SPI_0_1_sim_netlist.vhdl
@@ -521,8 +521,7 @@ begin
     );
 \buf_out_reg[0]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -533,8 +532,7 @@ begin
     );
 \buf_out_reg[10]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -545,8 +543,7 @@ begin
     );
 \buf_out_reg[11]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -557,8 +554,7 @@ begin
     );
 \buf_out_reg[12]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -569,8 +565,7 @@ begin
     );
 \buf_out_reg[13]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -581,8 +576,7 @@ begin
     );
 \buf_out_reg[14]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -593,8 +587,7 @@ begin
     );
 \buf_out_reg[15]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -605,8 +598,7 @@ begin
     );
 \buf_out_reg[1]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -617,8 +609,7 @@ begin
     );
 \buf_out_reg[2]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -629,8 +620,7 @@ begin
     );
 \buf_out_reg[3]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -641,8 +631,7 @@ begin
     );
 \buf_out_reg[4]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -653,8 +642,7 @@ begin
     );
 \buf_out_reg[5]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -665,8 +653,7 @@ begin
     );
 \buf_out_reg[6]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -677,8 +664,7 @@ begin
     );
 \buf_out_reg[7]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -689,8 +675,7 @@ begin
     );
 \buf_out_reg[8]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -701,8 +686,7 @@ begin
     );
 \buf_out_reg[9]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -763,8 +747,7 @@ begin
     );
 \position_reg[0]__0\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -787,8 +770,7 @@ begin
     );
 \position_reg[1]__0\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -811,8 +793,7 @@ begin
     );
 \position_reg[2]__0\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -835,8 +816,7 @@ begin
     );
 \position_reg[3]__0\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0',
-      IS_C_INVERTED => '1'
+      INIT => '0'
     )
         port map (
       C => clk_in,
@@ -846,10 +826,7 @@ begin
       R => spi_ss_n
     );
 \spi_data_in_reg[0]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(15),
@@ -857,10 +834,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[10]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(5),
@@ -868,10 +842,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[11]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(4),
@@ -879,10 +850,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[12]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(3),
@@ -890,10 +858,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[13]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(2),
@@ -901,10 +866,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[14]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(1),
@@ -912,10 +874,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[15]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(0),
@@ -923,10 +882,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(14),
@@ -934,10 +890,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(13),
@@ -945,10 +898,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(12),
@@ -956,10 +906,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[4]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(11),
@@ -967,10 +914,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[5]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(10),
@@ -978,10 +922,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[6]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(9),
@@ -989,10 +930,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[7]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(8),
@@ -1000,10 +938,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[8]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(7),
@@ -1011,10 +946,7 @@ begin
       R => '0'
     );
 \spi_data_in_reg[9]\: unisim.vcomponents.FDRE
-    generic map(
-      IS_C_INVERTED => '1'
-    )
-        port map (
+     port map (
       C => clk_in,
       CE => spi_ss_n,
       D => buf_in(6),

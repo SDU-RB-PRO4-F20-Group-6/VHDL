@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Fri Apr 17 16:33:23 2020
+// Date        : Sat May 16 10:05:45 2020
 // Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_parity_check_0/design_1_parity_check_0_sim_netlist.v
+//               C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_parity_check_0/design_1_parity_check_0_sim_netlist.v
 // Design      : design_1_parity_check_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -18,10 +18,10 @@
 module design_1_parity_check_0
    (data,
     parity);
-  input [15:0]data;
+  input [14:0]data;
   output parity;
 
-  wire [15:0]data;
+  wire [14:0]data;
   wire parity;
 
   design_1_parity_check_0_Evenparity U0
@@ -34,42 +34,41 @@ module design_1_parity_check_0_Evenparity
    (parity,
     data);
   output parity;
-  input [15:0]data;
+  input [14:0]data;
 
-  wire [15:0]data;
+  wire [14:0]data;
   wire parity;
   wire parity_INST_0_i_1_n_0;
   wire parity_INST_0_i_2_n_0;
 
-  LUT6 #(
-    .INIT(64'h6996966996696996)) 
+  LUT5 #(
+    .INIT(32'h96696996)) 
     parity_INST_0
-       (.I0(data[15]),
-        .I1(data[0]),
-        .I2(parity_INST_0_i_1_n_0),
-        .I3(parity_INST_0_i_2_n_0),
-        .I4(data[14]),
-        .I5(data[13]),
+       (.I0(parity_INST_0_i_1_n_0),
+        .I1(parity_INST_0_i_2_n_0),
+        .I2(data[14]),
+        .I3(data[12]),
+        .I4(data[13]),
         .O(parity));
   LUT6 #(
     .INIT(64'h6996966996696996)) 
     parity_INST_0_i_1
-       (.I0(data[4]),
+       (.I0(data[1]),
         .I1(data[3]),
-        .I2(data[7]),
-        .I3(data[8]),
-        .I4(data[5]),
-        .I5(data[6]),
+        .I2(data[6]),
+        .I3(data[7]),
+        .I4(data[4]),
+        .I5(data[5]),
         .O(parity_INST_0_i_1_n_0));
   LUT6 #(
     .INIT(64'h6996966996696996)) 
     parity_INST_0_i_2
-       (.I0(data[12]),
-        .I1(data[11]),
-        .I2(data[1]),
+       (.I0(data[10]),
+        .I1(data[0]),
+        .I2(data[9]),
         .I3(data[2]),
-        .I4(data[9]),
-        .I5(data[10]),
+        .I4(data[11]),
+        .I5(data[8]),
         .O(parity_INST_0_i_2_n_0));
 endmodule
 `ifndef GLBL

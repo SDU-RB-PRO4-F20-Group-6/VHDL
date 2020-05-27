@@ -15,16 +15,12 @@
       "pwm_data": "",
       "xlconcat_0": "",
       "xlconcat_1": "",
-      "basys3_led": "",
       "JB1": "",
       "JB2": "",
       "JB5": "",
       "JB6": "",
-      "parity_check": "",
-      "parity_calc": "",
       "xlconcat_2": "",
       "delay_0": "",
-      "SPI_0": "",
       "index_1": "",
       "index_0": "",
       "xlconcat_3": "",
@@ -33,13 +29,16 @@
       "delay_2": "",
       "enable_0": "",
       "enable_1": "",
-      "quadratur_motor_0": "",
-      "quadratur_motor_1": "",
-      "motor_controler_0": "",
-      "motor_controler_1": "",
+      "motor_controller_0": "",
+      "motor_controller_1": "",
       "motor_0": "",
       "motor_1": "",
-      "state_machine_0": ""
+      "SPI_0": "",
+      "quadratur_motor_0": "",
+      "quadratur_motor_1": "",
+      "parity_check": "",
+      "parity_calc": "",
+      "data_flow_manager_0": ""
     },
     "ports": {
       "clk": {
@@ -174,21 +173,6 @@
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "design_1_xlconcat_0_3"
       },
-      "basys3_led": {
-        "vlnv": "xilinx.com:ip:xlconcat:2.1",
-        "xci_name": "design_1_xlconcat_0_0",
-        "parameters": {
-          "IN3_WIDTH": {
-            "value": "1"
-          },
-          "IN4_WIDTH": {
-            "value": "9"
-          },
-          "NUM_PORTS": {
-            "value": "8"
-          }
-        }
-      },
       "JB1": {
         "vlnv": "xilinx.com:ip:xlslice:1.0",
         "xci_name": "design_1_xlslice_4_8",
@@ -255,50 +239,6 @@
           }
         }
       },
-      "parity_check": {
-        "vlnv": "xilinx.com:module_ref:Evenparity:1.0",
-        "xci_name": "design_1_Evenparity_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Evenparity",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "data": {
-            "direction": "I",
-            "left": "15",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "16",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "parity": {
-            "direction": "O"
-          }
-        }
-      },
-      "parity_calc": {
-        "vlnv": "xilinx.com:module_ref:Evenparity:1.0",
-        "xci_name": "design_1_parity_check_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Evenparity",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "data": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "parity": {
-            "direction": "O"
-          }
-        }
-      },
       "xlconcat_2": {
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "design_1_xlconcat_2_0",
@@ -343,54 +283,6 @@
             "direction": "O",
             "left": "8",
             "right": "0"
-          }
-        }
-      },
-      "SPI_0": {
-        "vlnv": "xilinx.com:module_ref:SPI:1.0",
-        "xci_name": "design_1_SPI_0_1",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "SPI",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk_in": {
-            "direction": "I"
-          },
-          "spi_sclk": {
-            "direction": "I"
-          },
-          "spi_mosi": {
-            "direction": "I"
-          },
-          "spi_ss_n": {
-            "direction": "I"
-          },
-          "spi_miso": {
-            "direction": "O"
-          },
-          "spi_data_in": {
-            "direction": "O",
-            "left": "15",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "16",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "spi_data_out": {
-            "direction": "I",
-            "left": "15",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "16",
-                "value_src": "ip_prop"
-              }
-            }
           }
         }
       },
@@ -555,75 +447,7 @@
           }
         }
       },
-      "quadratur_motor_0": {
-        "vlnv": "xilinx.com:module_ref:quadratur_decoder:1.0",
-        "xci_name": "design_1_quadratur_decoder_0_4",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "quadratur_decoder",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk_in": {
-            "direction": "I"
-          },
-          "encoder": {
-            "direction": "I",
-            "left": "1",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "2",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "value": {
-            "direction": "O",
-            "left": "14",
-            "right": "0"
-          }
-        }
-      },
-      "quadratur_motor_1": {
-        "vlnv": "xilinx.com:module_ref:quadratur_decoder:1.0",
-        "xci_name": "design_1_quadratur_decoder_0_5",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "quadratur_decoder",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk_in": {
-            "direction": "I"
-          },
-          "encoder": {
-            "direction": "I",
-            "left": "1",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "2",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "value": {
-            "direction": "O",
-            "left": "14",
-            "right": "0"
-          }
-        }
-      },
-      "motor_controler_0": {
+      "motor_controller_0": {
         "vlnv": "xilinx.com:module_ref:motor_controler:1.0",
         "xci_name": "design_1_motor_controler_0_0",
         "reference_info": {
@@ -650,7 +474,7 @@
           }
         }
       },
-      "motor_controler_1": {
+      "motor_controller_1": {
         "vlnv": "xilinx.com:module_ref:motor_controler:1.0",
         "xci_name": "design_1_motor_controler_0_1",
         "reference_info": {
@@ -735,12 +559,160 @@
           }
         }
       },
-      "state_machine_0": {
-        "vlnv": "xilinx.com:module_ref:state_machine:1.0",
-        "xci_name": "design_1_state_machine_0_0",
+      "SPI_0": {
+        "vlnv": "xilinx.com:module_ref:SPI:1.0",
+        "xci_name": "design_1_SPI_0_1",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "state_machine",
+          "ref_name": "SPI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "spi_sclk": {
+            "direction": "I"
+          },
+          "spi_mosi": {
+            "direction": "I"
+          },
+          "spi_ss_n": {
+            "direction": "I"
+          },
+          "spi_miso": {
+            "direction": "O"
+          },
+          "spi_data_in": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "spi_data_out": {
+            "direction": "I",
+            "left": "15",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "16",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
+      "quadratur_motor_0": {
+        "vlnv": "xilinx.com:module_ref:quadratur_decoder:1.0",
+        "xci_name": "design_1_quadratur_decoder_0_4",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "quadratur_decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "encoder": {
+            "direction": "I",
+            "left": "1",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "2",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "value": {
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          }
+        }
+      },
+      "quadratur_motor_1": {
+        "vlnv": "xilinx.com:module_ref:quadratur_decoder:1.0",
+        "xci_name": "design_1_quadratur_decoder_0_5",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "quadratur_decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "encoder": {
+            "direction": "I",
+            "left": "1",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "2",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "value": {
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          }
+        }
+      },
+      "parity_check": {
+        "vlnv": "xilinx.com:module_ref:Evenparity:1.0",
+        "xci_name": "design_1_Evenparity_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Evenparity",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "parity": {
+            "direction": "O"
+          }
+        }
+      },
+      "parity_calc": {
+        "vlnv": "xilinx.com:module_ref:Evenparity:1.0",
+        "xci_name": "design_1_parity_check_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Evenparity",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "parity": {
+            "direction": "O"
+          }
+        }
+      },
+      "data_flow_manager_0": {
+        "vlnv": "xilinx.com:module_ref:data_flow_manager:1.0",
+        "xci_name": "design_1_data_flow_manager_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "data_flow_manager",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -790,54 +762,18 @@
       }
     },
     "nets": {
-      "clk_in_0_1": {
-        "ports": [
-          "clk",
-          "delay_0/clk_in",
-          "SPI_0/clk_in",
-          "delay_2/clk_in",
-          "delay_1/clk_in",
-          "enable_0/clk",
-          "enable_1/clk",
-          "quadratur_motor_0/clk_in",
-          "quadratur_motor_1/clk_in",
-          "motor_controler_0/clk",
-          "motor_controler_1/clk",
-          "motor_0/clk_in",
-          "motor_1/clk_in",
-          "state_machine_0/clk_in"
-        ]
-      },
       "state_machine_0_motor_ctrl_A": {
         "ports": [
-          "state_machine_0/motor_ctrl_A",
+          "data_flow_manager_0/motor_ctrl_A",
           "enable_0/en",
           "motor_0/enable"
         ]
       },
       "state_machine_0_motor_ctrl_B": {
         "ports": [
-          "state_machine_0/motor_ctrl_B",
+          "data_flow_manager_0/motor_ctrl_B",
           "enable_1/en",
           "motor_1/enable"
-        ]
-      },
-      "xlconcat_0_dout1": {
-        "ports": [
-          "xlconcat_0/dout",
-          "quadratur_motor_0/encoder"
-        ]
-      },
-      "xlconcat_1_dout": {
-        "ports": [
-          "xlconcat_1/dout",
-          "quadratur_motor_1/encoder"
-        ]
-      },
-      "quadratur_decoder_1_value": {
-        "ports": [
-          "quadratur_motor_1/value",
-          "state_machine_0/quad_enc_B"
         ]
       },
       "delay_0_output": {
@@ -850,10 +786,10 @@
       "reset_0_1": {
         "ports": [
           "btnC",
-          "quadratur_motor_0/reset",
-          "quadratur_motor_1/reset",
           "motor_0/reset",
-          "motor_1/reset"
+          "motor_1/reset",
+          "quadratur_motor_0/reset",
+          "quadratur_motor_1/reset"
         ]
       },
       "xlslice_2_Dout": {
@@ -861,8 +797,7 @@
           "dir_or_request_type/Dout",
           "delay_2/signal_in",
           "delay_1/signal_in",
-          "basys3_led/In5",
-          "state_machine_0/request_type"
+          "data_flow_manager_0/request_type"
         ]
       },
       "JB0_Dout": {
@@ -889,23 +824,11 @@
           "xlconcat_1/In1"
         ]
       },
-      "quadratur_decoder_0_value": {
-        "ports": [
-          "quadratur_motor_0/value",
-          "state_machine_0/quad_enc_A"
-        ]
-      },
-      "Evenparity_0_parity": {
-        "ports": [
-          "parity_check/parity",
-          "state_machine_0/parity_check"
-        ]
-      },
       "state_machine_0_data_out": {
         "ports": [
-          "state_machine_0/data_out",
-          "parity_calc/data",
-          "xlconcat_2/In1"
+          "data_flow_manager_0/data_out",
+          "xlconcat_2/In1",
+          "parity_calc/data"
         ]
       },
       "parity_calc_parity": {
@@ -914,65 +837,10 @@
           "xlconcat_2/In0"
         ]
       },
-      "SPI_0_spi_miso": {
-        "ports": [
-          "SPI_0/spi_miso",
-          "miso"
-        ]
-      },
-      "sclk_1": {
-        "ports": [
-          "sclk",
-          "SPI_0/spi_sclk"
-        ]
-      },
-      "mosi_1": {
-        "ports": [
-          "mosi",
-          "SPI_0/spi_mosi"
-        ]
-      },
-      "ss_1": {
-        "ports": [
-          "ss",
-          "SPI_0/spi_ss_n"
-        ]
-      },
-      "xlslice_1_Dout": {
-        "ports": [
-          "Motor/Dout",
-          "basys3_led/In6",
-          "state_machine_0/motor_choice"
-        ]
-      },
-      "xlslice_0_Dout": {
-        "ports": [
-          "frame_type/Dout",
-          "basys3_led/In7",
-          "state_machine_0/frame_choice"
-        ]
-      },
-      "SPI_0_spi_data_in": {
-        "ports": [
-          "SPI_0/spi_data_in",
-          "frame_type/Din",
-          "Motor/Din",
-          "dir_or_request_type/Din",
-          "parity_check/data",
-          "pwm_data/Din"
-        ]
-      },
-      "xlconcat_2_dout": {
-        "ports": [
-          "xlconcat_2/dout",
-          "SPI_0/spi_data_out"
-        ]
-      },
       "pwm_data_Dout": {
         "ports": [
           "pwm_data/Dout",
-          "delay_0/signal_in",
-          "basys3_led/In4"
+          "delay_0/signal_in"
         ]
       },
       "JB_1": {
@@ -984,18 +852,6 @@
           "JB6/Din",
           "index_0/Din",
           "index_1/Din"
-        ]
-      },
-      "index_0_Dout": {
-        "ports": [
-          "index_0/Dout",
-          "state_machine_0/index_ctrl_A"
-        ]
-      },
-      "index_1_Dout": {
-        "ports": [
-          "index_1/Dout",
-          "state_machine_0/index_ctrl_B"
         ]
       },
       "xlconcat_3_dout": {
@@ -1014,13 +870,13 @@
       "motor_0_pwm_signal": {
         "ports": [
           "motor_0/pwm_signal",
-          "motor_controler_0/pwm"
+          "motor_controller_0/pwm"
         ]
       },
       "motor_1_pwm_signal": {
         "ports": [
           "motor_1/pwm_signal",
-          "motor_controler_1/pwm"
+          "motor_controller_1/pwm"
         ]
       },
       "delay_1_signal_out": {
@@ -1032,7 +888,7 @@
       "enable_0_ou": {
         "ports": [
           "enable_0/ou",
-          "motor_controler_0/dir"
+          "motor_controller_0/dir"
         ]
       },
       "delay_2_signal_out": {
@@ -1044,37 +900,144 @@
       "enable_1_ou": {
         "ports": [
           "enable_1/ou",
-          "motor_controler_1/dir"
+          "motor_controller_1/dir"
         ]
       },
       "motor_controler_0_outA": {
         "ports": [
-          "motor_controler_0/outA",
+          "motor_controller_0/outA",
           "xlconcat_3/In0"
         ]
       },
       "motor_controler_0_outB": {
         "ports": [
-          "motor_controler_0/outB",
+          "motor_controller_0/outB",
           "xlconcat_3/In1"
         ]
       },
       "motor_controler_1_outA": {
         "ports": [
-          "motor_controler_1/outA",
+          "motor_controller_1/outA",
           "xlconcat_3/In4"
         ]
       },
       "motor_controler_1_outB": {
         "ports": [
-          "motor_controler_1/outB",
+          "motor_controller_1/outB",
           "xlconcat_3/In5"
         ]
       },
-      "basys3_led_dout": {
+      "xlconcat_0_dout": {
         "ports": [
-          "basys3_led/dout",
+          "xlconcat_0/dout",
+          "quadratur_motor_0/encoder"
+        ]
+      },
+      "xlconcat_1_dout": {
+        "ports": [
+          "xlconcat_1/dout",
+          "quadratur_motor_1/encoder"
+        ]
+      },
+      "xlconcat_2_dout": {
+        "ports": [
+          "xlconcat_2/dout",
+          "SPI_0/spi_data_out",
           "led"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "clk",
+          "SPI_0/clk_in",
+          "enable_0/clk",
+          "delay_1/clk_in",
+          "motor_0/clk_in",
+          "motor_1/clk_in",
+          "delay_0/clk_in",
+          "enable_1/clk",
+          "delay_2/clk_in",
+          "quadratur_motor_1/clk_in",
+          "quadratur_motor_0/clk_in",
+          "data_flow_manager_0/clk_in",
+          "motor_controller_1/clk",
+          "motor_controller_0/clk"
+        ]
+      },
+      "quadratur_motor_0_value": {
+        "ports": [
+          "quadratur_motor_0/value",
+          "data_flow_manager_0/quad_enc_A"
+        ]
+      },
+      "quadratur_motor_1_value": {
+        "ports": [
+          "quadratur_motor_1/value",
+          "data_flow_manager_0/quad_enc_B"
+        ]
+      },
+      "Motor_Dout": {
+        "ports": [
+          "Motor/Dout",
+          "data_flow_manager_0/motor_choice"
+        ]
+      },
+      "parity_check_parity": {
+        "ports": [
+          "parity_check/parity",
+          "data_flow_manager_0/parity_check"
+        ]
+      },
+      "index_0_Dout": {
+        "ports": [
+          "index_0/Dout",
+          "data_flow_manager_0/index_ctrl_A"
+        ]
+      },
+      "index_1_Dout": {
+        "ports": [
+          "index_1/Dout",
+          "data_flow_manager_0/index_ctrl_B"
+        ]
+      },
+      "frame_type_Dout": {
+        "ports": [
+          "frame_type/Dout",
+          "data_flow_manager_0/frame_choice"
+        ]
+      },
+      "sclk_1": {
+        "ports": [
+          "sclk",
+          "SPI_0/spi_sclk"
+        ]
+      },
+      "SPI_0_spi_miso": {
+        "ports": [
+          "SPI_0/spi_miso",
+          "miso"
+        ]
+      },
+      "SPI_0_spi_data_in": {
+        "ports": [
+          "SPI_0/spi_data_in",
+          "pwm_data/Din",
+          "dir_or_request_type/Din",
+          "frame_type/Din",
+          "parity_check/data",
+          "Motor/Din"
+        ]
+      },
+      "mosi_1": {
+        "ports": [
+          "mosi",
+          "SPI_0/spi_mosi"
+        ]
+      },
+      "ss_1": {
+        "ports": [
+          "ss",
+          "SPI_0/spi_ss_n"
         ]
       }
     }

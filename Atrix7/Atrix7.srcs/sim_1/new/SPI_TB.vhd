@@ -22,13 +22,13 @@ architecture Behavioral of tb_SPI is
 
 
     signal clk_in       : std_logic := '0';
-    signal spi_sclk     : std_logic;
+    signal spi_sclk     : std_logic := '0';
     signal spi_mosi     : std_logic;
-    signal spi_ss_n     : std_logic;
+    signal spi_ss_n     : std_logic := '1';
     signal spi_miso     : std_logic;
     signal spi_data_in  : std_logic_vector (15 downto 0);
     signal spi_data_out : std_logic_vector (15 downto 0);
-    signal data : std_logic_vector (15 downto 0) := "1111000011110000";
+    signal data : std_logic_vector (15 downto 0) := "1010000010100000";
 
 begin
 
@@ -43,7 +43,7 @@ begin
 
 
     -- EDIT Adapt initialization as needed
-    clk_in <= not clk_in after 7 ns;
+    clk_in <= not clk_in after 23 ns;
     
     spi_sclk <= '0' after 50 ns, '1' after 80 ns, '0' after 110 ns, '1' after 140 ns, '0' after 170 ns, 
         '1' after 200 ns, '0' after 230 ns, '1' after 260 ns, '0' after 290 ns, '1' after 320 ns, 
@@ -58,7 +58,7 @@ begin
         data(5) after 650 ns, data(4) after 710 ns, data(3) after 770 ns, data(2) after 830 ns, data(1) after 890 ns,
         data(0) after 950 ns, 'U' after 1010 ns;
         
-    spi_ss_n <= '0' after 50 ns, 'U' after 1040 ns;
+    spi_ss_n <= '0' after 50 ns, '1' after 1040 ns;
     
     spi_data_out <= ("0000111100001111");
     -- EDIT Add stimuli here

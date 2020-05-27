@@ -47,7 +47,7 @@ architecture Behavioral of quadratur_decoder is
 signal preposition : std_logic_vector(1 downto 0);
 signal preval_A : std_logic;
 signal preval_B : std_logic;
-signal position : unsigned(14 downto 0) := (others => '0');
+signal position : signed(14 downto 0) := (others => '0');
 begin
     
     process (clk_in)
@@ -78,10 +78,10 @@ begin
                           position <= position;
                    end case;
                    
-                   --looping at frame position
-                   if (32767 = position) then
-                       position <= to_unsigned(32399, 15);
-                   elsif (32400 <= position) then 
+                   --looping at frame position. There are 32400 frame positions
+                   if (position >= 32500) then
+                       position <= to_signed(32399, 15);
+                   elsif (position >= 32400) then 
                        position <= (others =>  '0'); 
                    end if;
                    
@@ -91,7 +91,8 @@ begin
             
             -- write position to databus
             value <= std_logic_vector(position);
-              
+             
+            -- resets position
             if(reset = '1') then
               position <= (others => '0');
             end if;

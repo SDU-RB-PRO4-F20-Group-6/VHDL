@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Fri Apr 17 16:33:23 2020
+// Date        : Sat May 16 10:05:45 2020
 // Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_parity_check_0/design_1_parity_check_0_stub.v
+//               C:/Users/claus/source/semesterprojekt/VHDL/Atrix7/Atrix7.srcs/sources_1/bd/design_1/ip/design_1_parity_check_0/design_1_parity_check_0_stub.v
 // Design      : design_1_parity_check_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1
@@ -15,7 +15,7 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "Evenparity,Vivado 2019.2" *)
 module design_1_parity_check_0(data, parity)
-/* synthesis syn_black_box black_box_pad_pin="data[15:0],parity" */;
-  input [15:0]data;
+/* synthesis syn_black_box black_box_pad_pin="data[14:0],parity" */;
+  input [14:0]data;
   output parity;
 endmodule

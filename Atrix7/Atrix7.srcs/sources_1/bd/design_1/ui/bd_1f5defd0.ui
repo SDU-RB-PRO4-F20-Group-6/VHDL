@@ -1,94 +1,92 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.614634",
-   "Default View_TopLeft":"353,272",
+   "Default View_ScaleFactor":"0.342105",
+   "Default View_TopLeft":"-810,0",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port clk -pg 1 -lvl 0 -x 0 -y 980 -defaultsOSRD
-preplace port sclk -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
-preplace port mosi -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
-preplace port ss -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
-preplace port miso -pg 1 -lvl 8 -x 2080 -y 100 -defaultsOSRD
-preplace port btnC -pg 1 -lvl 0 -x 0 -y 1000 -defaultsOSRD
-preplace portBus led -pg 1 -lvl 8 -x 2080 -y 1090 -defaultsOSRD
-preplace portBus JB -pg 1 -lvl 0 -x 0 -y 760 -defaultsOSRD
-preplace portBus JC -pg 1 -lvl 8 -x 2080 -y 590 -defaultsOSRD
-preplace inst frame_type -pg 1 -lvl 3 -x 570 -y 290 -defaultsOSRD
-preplace inst Motor -pg 1 -lvl 3 -x 570 -y 390 -defaultsOSRD
-preplace inst dir_or_request_type -pg 1 -lvl 3 -x 570 -y 490 -defaultsOSRD
-preplace inst pwm_data -pg 1 -lvl 3 -x 570 -y 190 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 2 -x 320 -y 1070 -defaultsOSRD
-preplace inst xlconcat_1 -pg 1 -lvl 2 -x 320 -y 910 -defaultsOSRD
-preplace inst basys3_led -pg 1 -lvl 4 -x 950 -y 1520 -defaultsOSRD
-preplace inst JB1 -pg 1 -lvl 1 -x 120 -y 1060 -defaultsOSRD
-preplace inst JB2 -pg 1 -lvl 1 -x 120 -y 1160 -defaultsOSRD
-preplace inst JB5 -pg 1 -lvl 1 -x 120 -y 820 -defaultsOSRD
-preplace inst JB6 -pg 1 -lvl 1 -x 120 -y 920 -defaultsOSRD
-preplace inst parity_check -pg 1 -lvl 3 -x 570 -y 590 -defaultsOSRD
-preplace inst parity_calc -pg 1 -lvl 5 -x 1320 -y 200 -defaultsOSRD
-preplace inst xlconcat_2 -pg 1 -lvl 6 -x 1600 -y 210 -defaultsOSRD
-preplace inst delay_0 -pg 1 -lvl 4 -x 950 -y 200 -defaultsOSRD
-preplace inst SPI_0 -pg 1 -lvl 7 -x 1890 -y 110 -defaultsOSRD
-preplace inst index_1 -pg 1 -lvl 3 -x 570 -y 790 -defaultsOSRD
-preplace inst index_0 -pg 1 -lvl 3 -x 570 -y 690 -defaultsOSRD
-preplace inst xlconcat_3 -pg 1 -lvl 7 -x 1890 -y 590 -defaultsOSRD
-preplace inst constant_1 -pg 1 -lvl 6 -x 1600 -y 730 -defaultsOSRD
-preplace inst delay_1 -pg 1 -lvl 4 -x 950 -y 820 -defaultsOSRD
-preplace inst delay_2 -pg 1 -lvl 4 -x 950 -y 940 -defaultsOSRD
-preplace inst enable_0 -pg 1 -lvl 5 -x 1320 -y 780 -defaultsOSRD
-preplace inst enable_1 -pg 1 -lvl 5 -x 1320 -y 920 -defaultsOSRD
-preplace inst quadratur_motor_0 -pg 1 -lvl 3 -x 570 -y 1070 -defaultsOSRD
-preplace inst quadratur_motor_1 -pg 1 -lvl 3 -x 570 -y 910 -defaultsOSRD
-preplace inst motor_controler_0 -pg 1 -lvl 6 -x 1600 -y 470 -defaultsOSRD
-preplace inst motor_controler_1 -pg 1 -lvl 6 -x 1600 -y 610 -defaultsOSRD
-preplace inst motor_0 -pg 1 -lvl 5 -x 1320 -y 470 -defaultsOSRD
-preplace inst motor_1 -pg 1 -lvl 5 -x 1320 -y 630 -defaultsOSRD
-preplace inst state_machine_0 -pg 1 -lvl 4 -x 950 -y 630 -defaultsOSRD
-preplace netloc clk_in_0_1 1 0 7 NJ 980 NJ 980 410 130 780 380 1130 380 1480 70 N
-preplace netloc state_machine_0_motor_ctrl_A 1 4 1 1160 480n
-preplace netloc state_machine_0_motor_ctrl_B 1 4 1 1120 630n
-preplace netloc xlconcat_0_dout1 1 2 1 N 1070
-preplace netloc xlconcat_1_dout 1 2 1 N 910
-preplace netloc quadratur_decoder_1_value 1 3 1 750 670n
-preplace netloc delay_0_output 1 4 1 1100 200n
-preplace netloc reset_0_1 1 0 5 NJ 1000 NJ 1000 420 990 700 1010 1150
-preplace netloc xlslice_2_Dout 1 3 1 710 490n
-preplace netloc JB0_Dout 1 1 1 NJ 1060
-preplace netloc JB1_Dout 1 1 1 220J 1080n
-preplace netloc JC0_Dout 1 1 1 220J 820n
-preplace netloc JC1_Dout 1 1 1 NJ 920
-preplace netloc quadratur_decoder_0_value 1 3 1 740 650n
-preplace netloc Evenparity_0_parity 1 3 1 700J 590n
-preplace netloc state_machine_0_data_out 1 4 2 1110 140 1460
-preplace netloc parity_calc_parity 1 5 1 N 200
-preplace netloc SPI_0_spi_miso 1 7 1 NJ 100
-preplace netloc sclk_1 1 0 7 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ
-preplace netloc mosi_1 1 0 7 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ
-preplace netloc ss_1 1 0 7 20J 100 NJ 100 NJ 100 NJ 100 NJ 100 NJ 100 1710J
-preplace netloc xlslice_1_Dout 1 3 1 720 390n
-preplace netloc xlslice_0_Dout 1 3 1 730 290n
-preplace netloc SPI_0_spi_data_in 1 2 6 420 10 NJ 10 NJ 10 NJ 10 NJ 10 2050
-preplace netloc xlconcat_2_dout 1 6 1 1710 150n
-preplace netloc pwm_data_Dout 1 3 1 770J 190n
-preplace netloc JB_1 1 0 3 20 760 NJ 760 420
-preplace netloc index_0_Dout 1 3 1 NJ 690
-preplace netloc index_1_Dout 1 3 1 760J 710n
-preplace netloc xlconcat_3_dout 1 7 1 NJ 590
-preplace netloc constant_1_dout 1 6 1 1700 560n
-preplace netloc motor_0_pwm_signal 1 5 1 N 470
-preplace netloc motor_1_pwm_signal 1 5 1 1470 610n
-preplace netloc delay_1_signal_out 1 4 1 1140 780n
-preplace netloc enable_0_ou 1 5 1 1460 490n
-preplace netloc delay_2_signal_out 1 4 1 1100 920n
-preplace netloc enable_1_ou 1 5 1 1480 630n
-preplace netloc motor_controler_0_outA 1 6 1 1710 460n
-preplace netloc motor_controler_0_outB 1 6 1 1700 480n
-preplace netloc motor_controler_1_outA 1 6 1 N 600
-preplace netloc motor_controler_1_outB 1 6 1 N 620
-preplace netloc basys3_led_dout 1 4 4 NJ 1520 NJ 1520 NJ 1520 2050
-levelinfo -pg 1 0 120 320 570 950 1320 1600 1890 2080
-pagesize -pg 1 -db -bbox -sgen -100 0 2190 2050
+preplace port clk -pg 1 -lvl 0 -x 0 -y 440 -defaultsOSRD
+preplace port sclk -pg 1 -lvl 0 -x 0 -y 1200 -defaultsOSRD
+preplace port mosi -pg 1 -lvl 0 -x 0 -y 1220 -defaultsOSRD
+preplace port ss -pg 1 -lvl 0 -x 0 -y 1240 -defaultsOSRD
+preplace port miso -pg 1 -lvl 8 -x 1950 -y 1210 -defaultsOSRD
+preplace port btnC -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
+preplace portBus led -pg 1 -lvl 8 -x 1950 -y 1110 -defaultsOSRD
+preplace portBus JB -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
+preplace portBus JC -pg 1 -lvl 8 -x 1950 -y 730 -defaultsOSRD
+preplace inst frame_type -pg 1 -lvl 3 -x 560 -y 390 -defaultsOSRD
+preplace inst Motor -pg 1 -lvl 3 -x 560 -y 490 -defaultsOSRD
+preplace inst dir_or_request_type -pg 1 -lvl 3 -x 560 -y 590 -defaultsOSRD
+preplace inst pwm_data -pg 1 -lvl 3 -x 560 -y 1020 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 310 -y 130 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 2 -x 310 -y 270 -defaultsOSRD
+preplace inst JB1 -pg 1 -lvl 1 -x 120 -y 60 -defaultsOSRD
+preplace inst JB2 -pg 1 -lvl 1 -x 120 -y 160 -defaultsOSRD
+preplace inst JB5 -pg 1 -lvl 1 -x 120 -y 260 -defaultsOSRD
+preplace inst JB6 -pg 1 -lvl 1 -x 120 -y 360 -defaultsOSRD
+preplace inst xlconcat_2 -pg 1 -lvl 6 -x 1490 -y 1110 -defaultsOSRD
+preplace inst delay_0 -pg 1 -lvl 4 -x 890 -y 1010 -defaultsOSRD
+preplace inst index_1 -pg 1 -lvl 3 -x 560 -y 890 -defaultsOSRD
+preplace inst index_0 -pg 1 -lvl 3 -x 560 -y 790 -defaultsOSRD
+preplace inst xlconcat_3 -pg 1 -lvl 7 -x 1770 -y 730 -defaultsOSRD
+preplace inst constant_1 -pg 1 -lvl 6 -x 1490 -y 550 -defaultsOSRD
+preplace inst delay_1 -pg 1 -lvl 4 -x 890 -y 500 -defaultsOSRD
+preplace inst delay_2 -pg 1 -lvl 4 -x 890 -y 1130 -defaultsOSRD
+preplace inst enable_0 -pg 1 -lvl 5 -x 1220 -y 500 -defaultsOSRD
+preplace inst enable_1 -pg 1 -lvl 5 -x 1220 -y 980 -defaultsOSRD
+preplace inst motor_controller_0 -pg 1 -lvl 6 -x 1490 -y 670 -defaultsOSRD
+preplace inst motor_controller_1 -pg 1 -lvl 6 -x 1490 -y 810 -defaultsOSRD
+preplace inst motor_0 -pg 1 -lvl 5 -x 1220 -y 650 -defaultsOSRD
+preplace inst motor_1 -pg 1 -lvl 5 -x 1220 -y 810 -defaultsOSRD
+preplace inst SPI_0 -pg 1 -lvl 7 -x 1770 -y 1220 -defaultsOSRD
+preplace inst quadratur_motor_0 -pg 1 -lvl 3 -x 560 -y 130 -defaultsOSRD
+preplace inst quadratur_motor_1 -pg 1 -lvl 3 -x 560 -y 270 -defaultsOSRD
+preplace inst parity_check -pg 1 -lvl 3 -x 560 -y 690 -defaultsOSRD
+preplace inst parity_calc -pg 1 -lvl 5 -x 1220 -y 1100 -defaultsOSRD
+preplace inst data_flow_manager_0 -pg 1 -lvl 4 -x 890 -y 690 -defaultsOSRD
+preplace netloc state_machine_0_motor_ctrl_A 1 4 1 1040 520n
+preplace netloc state_machine_0_motor_ctrl_B 1 4 1 1050 690n
+preplace netloc delay_0_output 1 4 1 1060 640n
+preplace netloc reset_0_1 1 0 5 NJ 420 NJ 420 420 950 740J 930 1070
+preplace netloc xlslice_2_Dout 1 3 1 720 510n
+preplace netloc JB0_Dout 1 1 1 220J 60n
+preplace netloc JB1_Dout 1 1 1 220J 140n
+preplace netloc JC0_Dout 1 1 1 NJ 260
+preplace netloc JC1_Dout 1 1 1 220J 280n
+preplace netloc state_machine_0_data_out 1 4 2 1040 1160 1390J
+preplace netloc parity_calc_parity 1 5 1 NJ 1100
+preplace netloc pwm_data_Dout 1 3 1 NJ 1020
+preplace netloc JB_1 1 0 3 20 460 NJ 460 410
+preplace netloc xlconcat_3_dout 1 7 1 NJ 730
+preplace netloc constant_1_dout 1 6 1 1600 550n
+preplace netloc motor_0_pwm_signal 1 5 1 1360 650n
+preplace netloc motor_1_pwm_signal 1 5 1 N 810
+preplace netloc delay_1_signal_out 1 4 1 N 500
+preplace netloc enable_0_ou 1 5 1 1370 500n
+preplace netloc delay_2_signal_out 1 4 1 1080 980n
+preplace netloc enable_1_ou 1 5 1 1360 830n
+preplace netloc motor_controler_0_outA 1 6 1 N 660
+preplace netloc motor_controler_0_outB 1 6 1 N 680
+preplace netloc motor_controler_1_outA 1 6 1 1590 740n
+preplace netloc motor_controler_1_outB 1 6 1 1610 760n
+preplace netloc xlconcat_0_dout 1 2 1 N 130
+preplace netloc xlconcat_1_dout 1 2 1 N 270
+preplace netloc xlconcat_2_dout 1 6 2 1600 1110 NJ
+preplace netloc Net 1 0 7 NJ 440 NJ 440 400 960 710 940 1080 900 1380 1180 NJ
+preplace netloc quadratur_motor_0_value 1 3 1 740 130n
+preplace netloc quadratur_motor_1_value 1 3 1 700 270n
+preplace netloc Motor_Dout 1 3 1 690J 490n
+preplace netloc parity_check_parity 1 3 1 NJ 690
+preplace netloc index_0_Dout 1 3 1 690J 750n
+preplace netloc index_1_Dout 1 3 1 740J 770n
+preplace netloc frame_type_Dout 1 3 1 730J 390n
+preplace netloc sclk_1 1 0 7 NJ 1200 NJ 1200 NJ 1200 NJ 1200 NJ 1200 NJ 1200 NJ
+preplace netloc SPI_0_spi_miso 1 7 1 NJ 1210
+preplace netloc SPI_0_spi_data_in 1 2 6 430 1320 NJ 1320 NJ 1320 NJ 1320 NJ 1320 1930
+preplace netloc mosi_1 1 0 7 NJ 1220 NJ 1220 NJ 1220 NJ 1220 NJ 1220 NJ 1220 NJ
+preplace netloc ss_1 1 0 7 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ 1240 NJ
+levelinfo -pg 1 0 120 310 560 890 1220 1490 1770 1950
+pagesize -pg 1 -db -bbox -sgen -100 0 2060 1330
 "
 }
 0

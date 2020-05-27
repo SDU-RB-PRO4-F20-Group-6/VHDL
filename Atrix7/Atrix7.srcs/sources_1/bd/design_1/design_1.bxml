@@ -2,22 +2,14 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1588798507"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1588798507"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1588798507"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1588798507"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1590585446"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1590585446"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1590585446"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1590585446"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_pwm_control_0_0\design_1_pwm_control_0_0.xci" Type="IP">
         <Instance HierarchyPath="motor_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1586860052" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\design_1_state_machine_0_0\design_1_state_machine_0_0.xci" Type="IP">
-        <Instance HierarchyPath="state_machine_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1587075171" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -42,14 +34,6 @@
       <File Name="ip\design_1_xlslice_0_2\design_1_xlslice_0_2.xci" Type="IP">
         <Instance HierarchyPath="dir_or_request_type"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1586859389" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\design_1_xlconcat_0_0\design_1_xlconcat_0_0.xci" Type="IP">
-        <Instance HierarchyPath="basys3_led"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1586860142" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -208,7 +192,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\design_1_motor_controler_0_0\design_1_motor_controler_0_0.xci" Type="IP">
-        <Instance HierarchyPath="motor_controler_0"/>
+        <Instance HierarchyPath="motor_controller_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -216,7 +200,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\design_1_motor_controler_0_1\design_1_motor_controler_0_1.xci" Type="IP">
-        <Instance HierarchyPath="motor_controler_1"/>
+        <Instance HierarchyPath="motor_controller_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -263,6 +247,14 @@
       <File Name="sim\design_1.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_data_flow_manager_0_0\design_1_data_flow_manager_0_0.xci" Type="IP">
+        <Instance HierarchyPath="data_flow_manager_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="design_1_ooc.xdc" Type="XDC">

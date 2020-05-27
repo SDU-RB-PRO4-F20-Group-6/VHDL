@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Mon Apr 27 23:46:50 2020
+// Date        : Sat May  9 09:59:22 2020
 // Host        : DESKTOP-FP1UNT8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_SPI_0_1_sim_netlist.v
@@ -407,8 +407,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_in[9]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[0] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -416,8 +415,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[0]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[10] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -425,8 +423,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[10]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[11] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -434,8 +431,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[11]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[12] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -443,8 +439,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[12]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[13] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -452,8 +447,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[13]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[14] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -461,8 +455,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[14]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[15] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -470,8 +463,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[15]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[1] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -479,8 +471,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[1]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[2] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -488,8 +479,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[2]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[3] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -497,8 +487,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[3]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[4] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -506,8 +495,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[4]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[5] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -515,8 +503,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[5]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[6] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -524,8 +511,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[6]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[7] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -533,8 +519,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[7]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[8] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -542,8 +527,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(buf_out[8]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \buf_out_reg[9] 
        (.C(clk_in),
         .CE(spi_ss_n),
@@ -589,8 +573,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(position_reg[0]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \position_reg[0]__0 
        (.C(clk_in),
         .CE(1'b1),
@@ -607,8 +590,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(position_reg[1]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \position_reg[1]__0 
        (.C(clk_in),
         .CE(1'b1),
@@ -625,8 +607,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(position_reg[2]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \position_reg[2]__0 
        (.C(clk_in),
         .CE(1'b1),
@@ -643,137 +624,104 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_SPI
         .Q(position_reg[3]),
         .R(1'b0));
   FDRE #(
-    .INIT(1'b0),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b0)) 
     \position_reg[3]__0 
        (.C(clk_in),
         .CE(1'b1),
         .D(position_reg[3]),
         .Q(\position_reg[3]__0_n_0 ),
         .R(spi_ss_n));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[0] 
+  FDRE \spi_data_in_reg[0] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[15]),
         .Q(spi_data_in[0]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[10] 
+  FDRE \spi_data_in_reg[10] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[5]),
         .Q(spi_data_in[10]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[11] 
+  FDRE \spi_data_in_reg[11] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[4]),
         .Q(spi_data_in[11]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[12] 
+  FDRE \spi_data_in_reg[12] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[3]),
         .Q(spi_data_in[12]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[13] 
+  FDRE \spi_data_in_reg[13] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[2]),
         .Q(spi_data_in[13]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[14] 
+  FDRE \spi_data_in_reg[14] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[1]),
         .Q(spi_data_in[14]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[15] 
+  FDRE \spi_data_in_reg[15] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[0]),
         .Q(spi_data_in[15]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[1] 
+  FDRE \spi_data_in_reg[1] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[14]),
         .Q(spi_data_in[1]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[2] 
+  FDRE \spi_data_in_reg[2] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[13]),
         .Q(spi_data_in[2]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[3] 
+  FDRE \spi_data_in_reg[3] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[12]),
         .Q(spi_data_in[3]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[4] 
+  FDRE \spi_data_in_reg[4] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[11]),
         .Q(spi_data_in[4]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[5] 
+  FDRE \spi_data_in_reg[5] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[10]),
         .Q(spi_data_in[5]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[6] 
+  FDRE \spi_data_in_reg[6] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[9]),
         .Q(spi_data_in[6]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[7] 
+  FDRE \spi_data_in_reg[7] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[8]),
         .Q(spi_data_in[7]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[8] 
+  FDRE \spi_data_in_reg[8] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[7]),
         .Q(spi_data_in[8]),
         .R(1'b0));
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    \spi_data_in_reg[9] 
+  FDRE \spi_data_in_reg[9] 
        (.C(clk_in),
         .CE(spi_ss_n),
         .D(buf_in[6]),

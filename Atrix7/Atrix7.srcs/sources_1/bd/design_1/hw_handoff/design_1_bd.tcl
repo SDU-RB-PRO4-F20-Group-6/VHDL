@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# SPI, delay, delay, delay, enable, enable, pwm_control, pwm_control, motor_controler, motor_controler, Evenparity, Evenparity, quadratur_decoder, quadratur_decoder, state_machine
+# SPI, data_flow_manager, delay, delay, delay, enable, enable, pwm_control, pwm_control, motor_controler, motor_controler, Evenparity, Evenparity, quadratur_decoder, quadratur_decoder
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -227,17 +227,20 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: basys3_led, and set properties
-  set basys3_led [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 basys3_led ]
-  set_property -dict [ list \
-   CONFIG.IN3_WIDTH {1} \
-   CONFIG.IN4_WIDTH {9} \
-   CONFIG.NUM_PORTS {8} \
- ] $basys3_led
-
   # Create instance: constant_1, and set properties
   set constant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 constant_1 ]
 
+  # Create instance: data_flow_manager_0, and set properties
+  set block_name data_flow_manager
+  set block_cell_name data_flow_manager_0
+  if { [catch {set data_flow_manager_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $data_flow_manager_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: delay_0, and set properties
   set block_name delay
   set block_cell_name delay_0
@@ -362,24 +365,24 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: motor_controler_0, and set properties
+  # Create instance: motor_controller_0, and set properties
   set block_name motor_controler
-  set block_cell_name motor_controler_0
-  if { [catch {set motor_controler_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  set block_cell_name motor_controller_0
+  if { [catch {set motor_controller_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $motor_controler_0 eq "" } {
+   } elseif { $motor_controller_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: motor_controler_1, and set properties
+  # Create instance: motor_controller_1, and set properties
   set block_name motor_controler
-  set block_cell_name motor_controler_1
-  if { [catch {set motor_controler_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  set block_cell_name motor_controller_1
+  if { [catch {set motor_controller_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $motor_controler_1 eq "" } {
+   } elseif { $motor_controller_1 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -437,17 +440,6 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: state_machine_0, and set properties
-  set block_name state_machine
-  set block_cell_name state_machine_0
-  if { [catch {set state_machine_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $state_machine_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
 
@@ -469,48 +461,47 @@ proc create_root_design { parentCell } {
  ] $xlconcat_3
 
   # Create port connections
-  connect_bd_net -net Evenparity_0_parity [get_bd_pins parity_check/parity] [get_bd_pins state_machine_0/parity_check]
   connect_bd_net -net JB0_Dout [get_bd_pins JB1/Dout] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net JB1_Dout [get_bd_pins JB2/Dout] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net JB_1 [get_bd_ports JB] [get_bd_pins JB1/Din] [get_bd_pins JB2/Din] [get_bd_pins JB5/Din] [get_bd_pins JB6/Din] [get_bd_pins index_0/Din] [get_bd_pins index_1/Din]
   connect_bd_net -net JC0_Dout [get_bd_pins JB5/Dout] [get_bd_pins xlconcat_1/In0]
   connect_bd_net -net JC1_Dout [get_bd_pins JB6/Dout] [get_bd_pins xlconcat_1/In1]
+  connect_bd_net -net Motor_Dout [get_bd_pins Motor/Dout] [get_bd_pins data_flow_manager_0/motor_choice]
+  connect_bd_net -net Net [get_bd_ports clk] [get_bd_pins SPI_0/clk_in] [get_bd_pins data_flow_manager_0/clk_in] [get_bd_pins delay_0/clk_in] [get_bd_pins delay_1/clk_in] [get_bd_pins delay_2/clk_in] [get_bd_pins enable_0/clk] [get_bd_pins enable_1/clk] [get_bd_pins motor_0/clk_in] [get_bd_pins motor_1/clk_in] [get_bd_pins motor_controller_0/clk] [get_bd_pins motor_controller_1/clk] [get_bd_pins quadratur_motor_0/clk_in] [get_bd_pins quadratur_motor_1/clk_in]
   connect_bd_net -net SPI_0_spi_data_in [get_bd_pins Motor/Din] [get_bd_pins SPI_0/spi_data_in] [get_bd_pins dir_or_request_type/Din] [get_bd_pins frame_type/Din] [get_bd_pins parity_check/data] [get_bd_pins pwm_data/Din]
   connect_bd_net -net SPI_0_spi_miso [get_bd_ports miso] [get_bd_pins SPI_0/spi_miso]
-  connect_bd_net -net basys3_led_dout [get_bd_ports led] [get_bd_pins basys3_led/dout]
-  connect_bd_net -net clk_in_0_1 [get_bd_ports clk] [get_bd_pins SPI_0/clk_in] [get_bd_pins delay_0/clk_in] [get_bd_pins delay_1/clk_in] [get_bd_pins delay_2/clk_in] [get_bd_pins enable_0/clk] [get_bd_pins enable_1/clk] [get_bd_pins motor_0/clk_in] [get_bd_pins motor_1/clk_in] [get_bd_pins motor_controler_0/clk] [get_bd_pins motor_controler_1/clk] [get_bd_pins quadratur_motor_0/clk_in] [get_bd_pins quadratur_motor_1/clk_in] [get_bd_pins state_machine_0/clk_in]
   connect_bd_net -net constant_1_dout [get_bd_pins constant_1/dout] [get_bd_pins xlconcat_3/In2] [get_bd_pins xlconcat_3/In6]
   connect_bd_net -net delay_0_output [get_bd_pins delay_0/signal_out] [get_bd_pins motor_0/pwm_trigger] [get_bd_pins motor_1/pwm_trigger]
   connect_bd_net -net delay_1_signal_out [get_bd_pins delay_1/signal_out] [get_bd_pins enable_0/sig]
   connect_bd_net -net delay_2_signal_out [get_bd_pins delay_2/signal_out] [get_bd_pins enable_1/sig]
-  connect_bd_net -net enable_0_ou [get_bd_pins enable_0/ou] [get_bd_pins motor_controler_0/dir]
-  connect_bd_net -net enable_1_ou [get_bd_pins enable_1/ou] [get_bd_pins motor_controler_1/dir]
-  connect_bd_net -net index_0_Dout [get_bd_pins index_0/Dout] [get_bd_pins state_machine_0/index_ctrl_A]
-  connect_bd_net -net index_1_Dout [get_bd_pins index_1/Dout] [get_bd_pins state_machine_0/index_ctrl_B]
+  connect_bd_net -net enable_0_ou [get_bd_pins enable_0/ou] [get_bd_pins motor_controller_0/dir]
+  connect_bd_net -net enable_1_ou [get_bd_pins enable_1/ou] [get_bd_pins motor_controller_1/dir]
+  connect_bd_net -net frame_type_Dout [get_bd_pins data_flow_manager_0/frame_choice] [get_bd_pins frame_type/Dout]
+  connect_bd_net -net index_0_Dout [get_bd_pins data_flow_manager_0/index_ctrl_A] [get_bd_pins index_0/Dout]
+  connect_bd_net -net index_1_Dout [get_bd_pins data_flow_manager_0/index_ctrl_B] [get_bd_pins index_1/Dout]
   connect_bd_net -net mosi_1 [get_bd_ports mosi] [get_bd_pins SPI_0/spi_mosi]
-  connect_bd_net -net motor_0_pwm_signal [get_bd_pins motor_0/pwm_signal] [get_bd_pins motor_controler_0/pwm]
-  connect_bd_net -net motor_1_pwm_signal [get_bd_pins motor_1/pwm_signal] [get_bd_pins motor_controler_1/pwm]
-  connect_bd_net -net motor_controler_0_outA [get_bd_pins motor_controler_0/outA] [get_bd_pins xlconcat_3/In0]
-  connect_bd_net -net motor_controler_0_outB [get_bd_pins motor_controler_0/outB] [get_bd_pins xlconcat_3/In1]
-  connect_bd_net -net motor_controler_1_outA [get_bd_pins motor_controler_1/outA] [get_bd_pins xlconcat_3/In4]
-  connect_bd_net -net motor_controler_1_outB [get_bd_pins motor_controler_1/outB] [get_bd_pins xlconcat_3/In5]
+  connect_bd_net -net motor_0_pwm_signal [get_bd_pins motor_0/pwm_signal] [get_bd_pins motor_controller_0/pwm]
+  connect_bd_net -net motor_1_pwm_signal [get_bd_pins motor_1/pwm_signal] [get_bd_pins motor_controller_1/pwm]
+  connect_bd_net -net motor_controler_0_outA [get_bd_pins motor_controller_0/outA] [get_bd_pins xlconcat_3/In0]
+  connect_bd_net -net motor_controler_0_outB [get_bd_pins motor_controller_0/outB] [get_bd_pins xlconcat_3/In1]
+  connect_bd_net -net motor_controler_1_outA [get_bd_pins motor_controller_1/outA] [get_bd_pins xlconcat_3/In4]
+  connect_bd_net -net motor_controler_1_outB [get_bd_pins motor_controller_1/outB] [get_bd_pins xlconcat_3/In5]
   connect_bd_net -net parity_calc_parity [get_bd_pins parity_calc/parity] [get_bd_pins xlconcat_2/In0]
-  connect_bd_net -net pwm_data_Dout [get_bd_pins basys3_led/In4] [get_bd_pins delay_0/signal_in] [get_bd_pins pwm_data/Dout]
-  connect_bd_net -net quadratur_decoder_0_value [get_bd_pins quadratur_motor_0/value] [get_bd_pins state_machine_0/quad_enc_A]
-  connect_bd_net -net quadratur_decoder_1_value [get_bd_pins quadratur_motor_1/value] [get_bd_pins state_machine_0/quad_enc_B]
+  connect_bd_net -net parity_check_parity [get_bd_pins data_flow_manager_0/parity_check] [get_bd_pins parity_check/parity]
+  connect_bd_net -net pwm_data_Dout [get_bd_pins delay_0/signal_in] [get_bd_pins pwm_data/Dout]
+  connect_bd_net -net quadratur_motor_0_value [get_bd_pins data_flow_manager_0/quad_enc_A] [get_bd_pins quadratur_motor_0/value]
+  connect_bd_net -net quadratur_motor_1_value [get_bd_pins data_flow_manager_0/quad_enc_B] [get_bd_pins quadratur_motor_1/value]
   connect_bd_net -net reset_0_1 [get_bd_ports btnC] [get_bd_pins motor_0/reset] [get_bd_pins motor_1/reset] [get_bd_pins quadratur_motor_0/reset] [get_bd_pins quadratur_motor_1/reset]
   connect_bd_net -net sclk_1 [get_bd_ports sclk] [get_bd_pins SPI_0/spi_sclk]
   connect_bd_net -net ss_1 [get_bd_ports ss] [get_bd_pins SPI_0/spi_ss_n]
-  connect_bd_net -net state_machine_0_data_out [get_bd_pins parity_calc/data] [get_bd_pins state_machine_0/data_out] [get_bd_pins xlconcat_2/In1]
-  connect_bd_net -net state_machine_0_motor_ctrl_A [get_bd_pins enable_0/en] [get_bd_pins motor_0/enable] [get_bd_pins state_machine_0/motor_ctrl_A]
-  connect_bd_net -net state_machine_0_motor_ctrl_B [get_bd_pins enable_1/en] [get_bd_pins motor_1/enable] [get_bd_pins state_machine_0/motor_ctrl_B]
-  connect_bd_net -net xlconcat_0_dout1 [get_bd_pins quadratur_motor_0/encoder] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net state_machine_0_data_out [get_bd_pins data_flow_manager_0/data_out] [get_bd_pins parity_calc/data] [get_bd_pins xlconcat_2/In1]
+  connect_bd_net -net state_machine_0_motor_ctrl_A [get_bd_pins data_flow_manager_0/motor_ctrl_A] [get_bd_pins enable_0/en] [get_bd_pins motor_0/enable]
+  connect_bd_net -net state_machine_0_motor_ctrl_B [get_bd_pins data_flow_manager_0/motor_ctrl_B] [get_bd_pins enable_1/en] [get_bd_pins motor_1/enable]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins quadratur_motor_0/encoder] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_1_dout [get_bd_pins quadratur_motor_1/encoder] [get_bd_pins xlconcat_1/dout]
-  connect_bd_net -net xlconcat_2_dout [get_bd_pins SPI_0/spi_data_out] [get_bd_pins xlconcat_2/dout]
+  connect_bd_net -net xlconcat_2_dout [get_bd_ports led] [get_bd_pins SPI_0/spi_data_out] [get_bd_pins xlconcat_2/dout]
   connect_bd_net -net xlconcat_3_dout [get_bd_ports JC] [get_bd_pins xlconcat_3/dout]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins basys3_led/In7] [get_bd_pins frame_type/Dout] [get_bd_pins state_machine_0/frame_choice]
-  connect_bd_net -net xlslice_1_Dout [get_bd_pins Motor/Dout] [get_bd_pins basys3_led/In6] [get_bd_pins state_machine_0/motor_choice]
-  connect_bd_net -net xlslice_2_Dout [get_bd_pins basys3_led/In5] [get_bd_pins delay_1/signal_in] [get_bd_pins delay_2/signal_in] [get_bd_pins dir_or_request_type/Dout] [get_bd_pins state_machine_0/request_type]
+  connect_bd_net -net xlslice_2_Dout [get_bd_pins data_flow_manager_0/request_type] [get_bd_pins delay_1/signal_in] [get_bd_pins delay_2/signal_in] [get_bd_pins dir_or_request_type/Dout]
 
   # Create address segments
 

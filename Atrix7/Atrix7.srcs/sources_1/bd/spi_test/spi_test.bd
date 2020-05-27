@@ -1,0 +1,377 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xC3F746F7E68CC311",
+      "device": "xc7a35tcpg236-1",
+      "name": "spi_test",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "SPI_0": "",
+      "state_machine_0": "",
+      "xlconcat_0": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "xlslice_2": "",
+      "val_3": "",
+      "val_2": "",
+      "val_1": "",
+      "val_0": "",
+      "Evenparity_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "sclk": {
+        "direction": "I"
+      },
+      "mosi": {
+        "direction": "I"
+      },
+      "ss": {
+        "direction": "I"
+      },
+      "miso": {
+        "direction": "O"
+      },
+      "led": {
+        "direction": "O",
+        "left": "15",
+        "right": "0",
+        "parameters": {
+          "PortWidth": {
+            "value": "16",
+            "value_src": "ip_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "SPI_0": {
+        "vlnv": "xilinx.com:module_ref:SPI:1.0",
+        "xci_name": "spi_test_SPI_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SPI",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "spi_sclk": {
+            "direction": "I"
+          },
+          "spi_mosi": {
+            "direction": "I"
+          },
+          "spi_ss_n": {
+            "direction": "I"
+          },
+          "spi_miso": {
+            "direction": "O"
+          },
+          "spi_data_in": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "spi_data_out": {
+            "direction": "I",
+            "left": "15",
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "16",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
+      "state_machine_0": {
+        "vlnv": "xilinx.com:module_ref:state_machine:1.0",
+        "xci_name": "spi_test_state_machine_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "state_machine",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "frame_choice": {
+            "direction": "I"
+          },
+          "motor_choice": {
+            "direction": "I"
+          },
+          "request_type": {
+            "direction": "I"
+          },
+          "parity_check": {
+            "direction": "I"
+          },
+          "motor_ctrl_A": {
+            "direction": "O"
+          },
+          "motor_ctrl_B": {
+            "direction": "O"
+          },
+          "quad_enc_A": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "quad_enc_B": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "index_ctrl_A": {
+            "direction": "I"
+          },
+          "index_ctrl_B": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "spi_test_xlconcat_0_0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "1"
+          },
+          "IN1_WIDTH": {
+            "value": "15"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "spi_test_xlslice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "15"
+          },
+          "DIN_TO": {
+            "value": "15"
+          },
+          "DIN_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "spi_test_xlslice_0_4",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "14"
+          },
+          "DIN_TO": {
+            "value": "14"
+          },
+          "DIN_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "xlslice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "spi_test_xlslice_0_5",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "13"
+          },
+          "DIN_TO": {
+            "value": "13"
+          },
+          "DIN_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "val_3": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "spi_test_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "3"
+          },
+          "CONST_WIDTH": {
+            "value": "15"
+          }
+        }
+      },
+      "val_2": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "spi_test_val_0x0A0A_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "2"
+          },
+          "CONST_WIDTH": {
+            "value": "15"
+          }
+        }
+      },
+      "val_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "spi_test_val_0x0A0A_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "1"
+          },
+          "CONST_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "val_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "spi_test_val_0x0A0A_2",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "Evenparity_0": {
+        "vlnv": "xilinx.com:module_ref:Evenparity:1.0",
+        "xci_name": "spi_test_Evenparity_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Evenparity",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "parity": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_in_0_1": {
+        "ports": [
+          "clk",
+          "SPI_0/clk_in",
+          "state_machine_0/clk_in"
+        ]
+      },
+      "spi_sclk_0_1": {
+        "ports": [
+          "sclk",
+          "SPI_0/spi_sclk"
+        ]
+      },
+      "spi_mosi_0_1": {
+        "ports": [
+          "mosi",
+          "SPI_0/spi_mosi"
+        ]
+      },
+      "spi_ss_n_0_1": {
+        "ports": [
+          "ss",
+          "SPI_0/spi_ss_n"
+        ]
+      },
+      "SPI_0_spi_miso": {
+        "ports": [
+          "SPI_0/spi_miso",
+          "miso"
+        ]
+      },
+      "state_machine_0_data_out": {
+        "ports": [
+          "state_machine_0/data_out",
+          "Evenparity_0/data",
+          "xlconcat_0/In1"
+        ]
+      },
+      "SPI_0_spi_data_in": {
+        "ports": [
+          "SPI_0/spi_data_in",
+          "xlslice_0/Din",
+          "xlslice_1/Din",
+          "xlslice_2/Din"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "state_machine_0/frame_choice"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "state_machine_0/motor_choice"
+        ]
+      },
+      "xlslice_2_Dout": {
+        "ports": [
+          "xlslice_2/Dout",
+          "state_machine_0/request_type"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "val_3/dout",
+          "state_machine_0/quad_enc_A"
+        ]
+      },
+      "val_0x0A0A1_dout": {
+        "ports": [
+          "val_2/dout",
+          "state_machine_0/quad_enc_B"
+        ]
+      },
+      "val_0x0A0A2_dout": {
+        "ports": [
+          "val_1/dout",
+          "state_machine_0/index_ctrl_A"
+        ]
+      },
+      "val_0x0A0A3_dout": {
+        "ports": [
+          "val_0/dout",
+          "state_machine_0/index_ctrl_B"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "led",
+          "SPI_0/spi_data_out"
+        ]
+      },
+      "Evenparity_0_parity": {
+        "ports": [
+          "Evenparity_0/parity",
+          "xlconcat_0/In0"
+        ]
+      }
+    }
+  }
+}

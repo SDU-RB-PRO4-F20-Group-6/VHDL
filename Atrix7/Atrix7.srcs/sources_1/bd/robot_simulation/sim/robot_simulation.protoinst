@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"robot_simulation": {
+			"proto_instances": {
+			}
+		}
+	}
+}

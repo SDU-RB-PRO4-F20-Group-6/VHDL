@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Evenparity is
   Port ( 
-    data    : in std_logic_vector(15 downto 0);
+    data    : in std_logic_vector(14 downto 0);
     parity  : out std_logic);
 end Evenparity;
 
@@ -42,6 +42,6 @@ architecture Behavioral of Evenparity is
 begin
 parity <= data(0) xor data(1) xor data(2) xor data(3) xor data(4) 
     xor data(5) xor data(6) xor data(7) xor data(8) xor data(9) xor 
-    data(10) xor data(11) xor data(12) xor data(13) xor data(14) xor data(15);
+    data(10) xor data(11) xor data(12) xor data(13) xor data(14);
 
 end Behavioral;

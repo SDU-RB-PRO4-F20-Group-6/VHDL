@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1588841969">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1590585496">
   <File Type="BITSTR-BMM" Name="design_1_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="design_1_wrapper_timing_summary_init.rpt"/>
@@ -85,14 +85,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/state_machine.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../claus_playground/claus_playground.srcs/sources_1/new/state_machine.vhd"/>
-        <Attr Name="ImportTime" Val="1587075145"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/quadratur_decoder.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../claus_quadrature_decoder/claus_quadrature_decoder.srcs/sources_1/new/quadratur_decoder.vhd"/>
@@ -137,6 +129,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/data_flow_manager.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../claus_playground/claus_playground.srcs/sources_1/bd/design_1/design_1.bd"/>
@@ -154,11 +152,48 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/component_mapper.vhd">
+    <File Path="$PSRCDIR/sources_1/new/state_machine.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../claus_quadrature_decoder/claus_quadrature_decoder.srcs/sources_1/new/component_mapper.vhd"/>
-        <Attr Name="ImportTime" Val="1585346058"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../claus_playground/claus_playground.srcs/sources_1/new/state_machine.vhd"/>
+        <Attr Name="ImportTime" Val="1587075145"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/robot_simulation/robot_simulation.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/robot_simulation/hdl/robot_simulation_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/spi_test/spi_test.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/spi_test/hdl/spi_test_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/empty.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -200,19 +235,27 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_SPI_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_quadratur_decoder_0_5"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_Evenparity_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_parity_check_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_delay_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_pwm_control_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_quadratur_decoder_0_4"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_delay_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_delay_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_quadratur_decoder_0_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_motor_controler_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="spi_test_SPI_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_enable_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_enable_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_motor_controler_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_motor_controler_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_pwm_control_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="robot_simulation_state_machine_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_pwm_control_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_state_machine_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="robot_simulation_quadratur_decoder_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_SPI_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_Evenparity_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_quadratur_decoder_0_5"/>
+  <BlockFileSet Type="BlockSrcs" Name="spi_test_Evenparity_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="spi_test_state_machine_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="robot_simulation_quadratur_decoder_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="robot_simulation_Evenparity_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="robot_simulation_SPI_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_data_flow_manager_0_0"/>
 </GenRun>
